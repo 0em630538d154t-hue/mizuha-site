@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MINAMO | MIZUHA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root{--off:#fdfcf8;--beige:#f4f0e8;--blue:#d7edf2;--text:#2f4a52;--muted:#526a70;--deep:#263f46;--gold:#b8a56f;--line:rgba(52,79,87,.18);--serif:"Noto Serif JP",serif;--latin:"Cormorant Garamond",serif;--sans:"Noto Sans JP",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,var(--off),#f7fbfa,var(--off));color:var(--text);font-family:var(--sans);font-size:19px;font-weight:300;line-height:2.05}a{text-decoration:none;color:inherit}.header{position:fixed;z-index:10;inset:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(22px,5vw,72px);background:rgba(253,252,248,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(52,79,87,.1)}.brand{font-family:var(--latin);font-size:34px;color:var(--deep);line-height:1}.nav{display:flex;gap:24px;color:var(--muted);font-family:var(--latin);font-size:18px}.hero,.section{position:relative;overflow:hidden;padding:clamp(96px,13vw,170px) clamp(22px,5vw,76px)}.hero{min-height:78svh;display:grid;align-items:center;padding-top:126px;background:linear-gradient(90deg,rgba(253,252,248,.96),rgba(253,252,248,.78),rgba(215,237,242,.3)),linear-gradient(180deg,#fbfaf4,#eaf6f7)}.hero:before{content:"";position:absolute;right:-10%;bottom:-4%;width:min(70vw,850px);aspect-ratio:1/.42;border:1px solid rgba(52,79,87,.12);border-radius:50%;transform:rotate(-7deg)}.hero:after{content:"";position:absolute;right:12%;top:31%;width:128px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,253,244,.88) 0 38%,rgba(255,253,244,.58) 56%,transparent 76%);box-shadow:0 0 104px rgba(184,165,111,.24),0 0 170px rgba(255,253,244,.38);opacity:.78}.inner{position:relative;z-index:2;width:min(1120px,100%);margin:0 auto}.narrow{width:min(760px,100%)}.label{font-family:var(--latin);font-size:18px;letter-spacing:.08em;color:var(--gold);margin:0 0 18px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--deep)}h1{font-family:var(--latin);font-size:clamp(64px,10vw,116px);line-height:.95;margin-bottom:18px}.jp-name{margin-bottom:18px;color:var(--gold);font-family:var(--serif);font-size:clamp(23px,3vw,34px);line-height:1.4}.service-title{margin-bottom:22px;color:var(--deep);font-family:var(--serif);font-size:clamp(24px,3vw,34px);line-height:1.55}.catch-copy{margin-bottom:0;color:var(--deep);font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);line-height:1.8}.lead{font-size:clamp(19px,2vw,22px);line-height:2.15;color:var(--text);max-width:720px}.service-copy{max-width:860px;color:var(--text);font-size:clamp(20px,1.9vw,23px);line-height:2.05;word-break:keep-all;overflow-wrap:break-word}.service-copy p{margin-bottom:1.08em}.for-you-inline{margin-top:clamp(44px,6vw,64px);padding-top:34px;border-top:1px solid var(--line)}.for-you-inline h3{margin-bottom:22px;font-size:clamp(24px,2.6vw,34px)}.for-you-inline ul{margin:0;padding-left:1.2em}.for-you-inline li{margin:.62em 0;line-height:2}h2{font-size:clamp(26px,3.3vw,40px);margin-bottom:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.service-grid{grid-template-columns:minmax(200px,.42fr) minmax(0,1.32fr);gap:clamp(34px,5vw,64px);align-items:start}.flow-grid{grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:clamp(30px,4.5vw,54px);align-items:start}.panel{padding:36px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.56);word-break:keep-all;overflow-wrap:break-word}.panel ul{margin:0;padding-left:1.2em}.panel li{margin:.65em 0;line-height:2}.flow{counter-reset:step;display:grid;gap:12px}.flow p{counter-increment:step;margin:0;padding:20px 0;border-bottom:1px solid var(--line);line-height:1.82;word-break:keep-all;overflow-wrap:break-word}.flow p:before{content:counter(step,decimal-leading-zero);display:inline-block;min-width:42px;font-family:var(--latin);color:var(--gold)}.flow strong{display:block;margin:0 0 6px 42px;color:var(--deep);font-family:var(--serif);font-weight:400;font-size:1.08em}.flow-text{display:block;margin-left:42px;max-width:760px}.price-section{background:linear-gradient(180deg,var(--off),rgba(244,240,232,.7))}.price-list{display:grid;gap:22px}.price-card{padding:34px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.58);word-break:keep-all;overflow-wrap:break-word}.price-card h3{margin-bottom:16px;font-size:clamp(24px,2.7vw,34px)}.price-card p{margin-bottom:.8em;line-height:1.95}.price-card .compact{margin-bottom:.1em}.price{font-size:clamp(24px,3vw,34px);color:var(--deep)}.price-notes{margin-top:18px;color:var(--muted);font-size:17px}.price-card ul{margin:18px 0 0;padding-left:1.2em}.price-card li{margin:.45em 0}.cta{text-align:center;background:linear-gradient(180deg,var(--blue),#edf7f8)}.button{display:inline-flex;min-height:56px;align-items:center;justify-content:center;padding:13px 34px;border:1px solid rgba(184,165,111,.66);border-radius:999px;background:rgba(255,255,255,.72);color:var(--deep)}.line-qr{width:132px;height:132px;margin:28px auto 10px;padding:10px;border:1px solid rgba(52,79,87,.14);border-radius:8px;background:rgba(255,255,255,.64)}.line-qr img{display:block;width:100%;height:100%}.qr-note{margin:0;color:var(--muted);font-size:14px}.floating-line{position:fixed;right:18px;bottom:18px;z-index:40;display:none;min-height:52px;align-items:center;justify-content:center;padding:12px 20px;border:1px solid rgba(184,165,111,.68);border-radius:999px;background:rgba(253,252,248,.92);box-shadow:0 12px 32px rgba(52,79,87,.12);color:var(--deep);font-size:16px;backdrop-filter:blur(14px)}.footer{padding:44px 22px;text-align:center;color:var(--muted);background:var(--off)}@media(max-width:760px){body{font-size:18px;line-height:2}.brand{font-size:31px}.nav{display:none}.hero,.section{padding:92px 23px}.hero{padding-top:118px}.hero:after{top:33%;right:4%;opacity:.68}.hero:before{bottom:-2%}.grid,.service-grid,.flow-grid{grid-template-columns:1fr}.panel,.price-card{padding:28px}.catch-copy{font-size:20px;line-height:1.9}.lead{font-size:18px;line-height:2.08}.service-copy{font-size:19px;line-height:2.02;word-break:normal}.flow p{line-height:1.9;word-break:normal}.flow strong,.flow-text{margin-left:38px}.flow p:before{min-width:38px}.for-you-inline{margin-top:38px;padding-top:28px}.button{width:100%;font-size:18px}.floating-line{display:inline-flex}}    </style>
+<style>
+header a:first-of-type::after,
+.brand::after,
+.site-brand::after,
+.site-logo::after,
+.logo::after {
+  content: "安心の場・調和の世界";
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(79, 98, 104, 0.74);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+</style>
+<style>
+  header a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mizuha-brand-mark::after {
+    content: "安心の場・調和の世界" !important;
+    display: block !important;
+    display: block;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+</head>
+  <body>
+    <header class="header"><a class="brand" href="mizuha.html">MIZUHA</a><nav class="nav"><a href="mizuha.html#menu">Menu</a><a href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a></nav></header>
+    <main>
+      <section class="hero"><div class="inner"><p class="label">MIZUHA MENU</p><h1>MINAMO</h1><p class="jp-name">水面</p><p class="service-title">ファスティング・食育</p><p class="catch-copy">身体という水に、もう一度耳を澄ます。</p></div></section>
+      <section class="section"><div class="inner grid service-grid"><div><p class="label">Service</p><h2>サービス説明</h2></div><div class="service-copy"><p>心と身体の水面を静め、食を通して内なる巡りを思い出す時間。</p><p>人の身体の大部分は、水でできています。</p><p>その水は、日々の食事や暮らし方の影響を受けながら、絶えず巡っています。</p><p>ファスティングは、ただ食べないことではありません。</p><p>自分の身体を大切にすること。</p><p>身体の声に耳を澄ますこと。</p><p>忙しさの中で後回しにしていた自分自身と向き合うこと。</p><p>身体を大切にできるようになると、心にも少しずつ余白が生まれます。</p><p>心に余白が生まれると、自分との対話が始まります。</p><p>食を整えることは、身体という水を整えること。</p><p>そして、生き方を整えること。</p><p>MINAMOは、静かな水面のように、本来の自分を映し出すための入口です。</p><div class="for-you-inline"><p class="label">For You</p><h3>こんな方へ</h3><ul><li>食べることとの関係を見つめ直したい</li><li>身体の声を聴けるようになりたい</li><li>忙しさの中で、自分を大切にする余裕が少なくなっている</li><li>心と身体の両方を整えたい</li><li>本来の感覚を取り戻したい</li><li>自分と向き合う時間がほしい</li><li>人生の流れを見つめ直したい</li><li>自分自身をもっと大切にしたい</li></ul></div></div></div></section>
+      <section class="section"><div class="inner grid flow-grid"><div><p class="label">Flow</p><h2>巡りを整える5つのステップ</h2><div class="flow"><p><strong>今の水面を見つめる</strong><span class="flow-text">Zoomセッションにて、現在のお悩みや身体の状態、目指したい未来についてお伺いします。</span></p><p><strong>水の流れを知る</strong><span class="flow-text">食習慣や生活習慣を振り返りながら、今の身体の巡りや状態を確認します。</span></p><p><strong>巡りの仕組みを学ぶ</strong><span class="flow-text">ファスティング講座を通して、身体の仕組みや食との向き合い方を学びます。</span></p><p><strong>巡りを整える</strong><span class="flow-text">実践期間中はサポートを行いながら、身体の変化や気づきを一緒に見つめていきます。</span></p><p><strong>本来の流れへ還る</strong><span class="flow-text">アフターセミナーにて振り返りを行い、これからの食との付き合い方や暮らしの整え方を確認します。</span></p></div></div></div></section>
+      <section class="section price-section"><div class="inner grid service-grid"><div><p class="label">Price</p><h2>料金のご案内</h2></div><div class="price-list"><article class="price-card"><h3>巡りの個別相談</h3><p>Zoom 60分</p><p class="price">5,500円</p><p>現在の状態やお悩みを伺い、あなたに合った整え方をご提案します。</p></article><article class="price-card"><h3>MINAMO 個別ファスティングサポート</h3><p class="price">33,000円〜</p><ul><li>個別Zoomセッション</li><li>ファスティング講座（食育含む）</li><li>実践期間中のLINEサポート</li><li>アフターセミナー</li></ul><div class="price-notes"><p>※酵素ドリンク代別途</p><p>（KALAまたはMANAプレミアム使用）</p><p>※期間や内容により異なります</p></div></article><article class="price-card"><h3>MINAMO グループファスティング</h3><p class="compact">4名以上で開催</p><p class="price">お一人様 22,000円〜</p><p>仲間とともに学び、実践しながら、身体と心の巡りを整えていくプログラムです。</p><div class="price-notes"><p>※酵素ドリンク代別途</p><p>（KALAまたはMANAプレミアム使用）</p><p>※期間や内容により異なります</p></div></article><article class="price-card"><h3>まずは巡りの個別相談から。</h3><p>今の身体の状態やお悩みを伺い、ファスティング・食育・食習慣の見直しなど、あなたに合った整え方をご提案します。</p></article></div></div></section>
+      <section class="section cta"><div class="inner narrow"><p class="label">Reserve</p><h2>静かに、今のあなたから。</h2><a class="button" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a></div></section>
+      <section class="section"><div class="inner grid service-grid"><div><p class="label">FAQ</p><h2>よくある質問</h2></div><div class="service-copy"><p><strong>Q. ファスティング未経験でも受けられますか？</strong><br />A. はい。現在の状態を伺いながら、無理のない方法をご提案します。</p><p><strong>Q. 必ずファスティングをしなければいけませんか？</strong><br />A. いいえ。食育や食習慣の見直しなど、今の状態に合わせた整え方をご提案しています。</p><p><strong>Q. 食育だけでも受けられますか？</strong><br />A. はい。ファスティングだけでなく、食育や食習慣の見直しから始めることも可能です。</p><p><strong>Q. オンラインで受けられますか？</strong><br />A. ZoomとLINEを利用して全国からご参加いただけます。</p><p><strong>Q. 酵素ドリンクは必要ですか？</strong><br />A. 食育やファスティングの内容に応じて、酵素ドリンクをご案内しています。</p></div></div></section>
+    </main>
+    <a class="floating-line" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+    <footer class="footer">© MIZUHA</footer>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header || header.querySelector('a[href*="#for-you"]')) return;
+    const menuLink = [...header.querySelectorAll("a")].find((link) => link.getAttribute("href")?.includes("#menu"));
+    if (!menuLink) return;
+    const forYou = document.createElement("a");
+    forYou.href = "mizuha.html#for-you";
+    forYou.textContent = "For You";
+    menuLink.before(forYou);
+  })();
+</script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => el.textContent.trim() === "MIZUHA");
+    if (logo) logo.classList.add("mizuha-brand-mark");
+  })();
+</script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const logo = [...header.querySelectorAll("a, span, div")]
+      .find((el) => el.textContent.trim() === "MIZUHA");
+    if (logo) {
+      logo.classList.add("mizuha-brand-mark");
+      logo.removeAttribute("href");
+      logo.style.cursor = "default";
+    }
+
+    const sections = [
+      ["サービス説明", "service"],
+      ["こんな方へ", "for-you"],
+      ["巡りを整える5つのステップ", "flow"],
+      ["料金のご案内", "price"],
+      ["Reserve", "reserve"],
+      ["よくある質問", "faq"],
+    ];
+
+    sections.forEach(([label, id]) => {
+      const target = [...document.querySelectorAll("section, div, article")]
+        .find((el) => el.textContent.trim().startsWith(label));
+      if (target && !target.id) target.id = id;
+    });
+
+    const nav = header.querySelector("nav");
+    if (!nav) return;
+    nav.innerHTML = `
+      <a href="#service">Service</a>
+      <a href="#for-you">For You</a>
+      <a href="#flow">Flow</a>
+      <a href="#price">Price</a>
+      <a href="#faq">FAQ</a>
+      <a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>
+    `;
+  })();
+</script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const findByText = (text) => {
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const value = (node.textContent || "").replace(/\s+/g, " ").trim();
+        if (value === text || value.startsWith(text)) return node;
+      }
+      return null;
+    };
+
+    const setAnchor = (id, text) => {
+      const found = findByText(text);
+      if (!found) return;
+      const target = found.closest("section") || found.closest(".section") || found.closest(".content") || found;
+      target.id = id;
+      target.style.scrollMarginTop = "120px";
+    };
+
+    setAnchor("minamo-service", "サービス説明");
+    setAnchor("minamo-for-you", "こんな方へ");
+    setAnchor("minamo-flow", "巡りを整える5つのステップ");
+    setAnchor("minamo-price", "料金のご案内");
+    setAnchor("minamo-reserve", "Reserve");
+    setAnchor("minamo-faq", "よくある質問");
+
+    const logo = [...header.querySelectorAll("a, span, div")]
+      .find((el) => (el.textContent || "").trim() === "MIZUHA");
+    if (logo) {
+      logo.classList.add("mizuha-brand-mark");
+      logo.removeAttribute("href");
+      logo.setAttribute("aria-label", "MIZUHA");
+      logo.style.cursor = "default";
+    }
+
+    const nav = header.querySelector("nav");
+    if (nav) {
+      nav.innerHTML = `
+        <a href="#minamo-service">Service</a>
+        <a href="#minamo-for-you">For You</a>
+        <a href="#minamo-flow">Flow</a>
+        <a href="#minamo-price">Price</a>
+        <a href="#minamo-faq">FAQ</a>
+        <a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>
+      `;
+    }
+
+    header.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", link.getAttribute("href"));
+      });
+    });
+  })();
+</script>
+<style>
+  header a::after,
+  header .brand::after,
+  header .site-brand::after,
+  header .site-logo::after,
+  header .logo::after,
+  header .mizuha-brand-mark::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mizuha-brand-subtitle {
+    display: block;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const subtitleText = "安心の場・調和の世界";
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => (el.childNodes[0]?.textContent || el.textContent || "").trim().startsWith("MIZUHA"));
+    if (!logo) return;
+    [...logo.querySelectorAll(".mizuha-brand-subtitle")].slice(1).forEach((el) => el.remove());
+    [...logo.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes(subtitleText)) {
+        node.textContent = node.textContent.replace(subtitleText, "").trim();
+      }
+    });
+    if (!logo.querySelector(".mizuha-brand-subtitle")) {
+      const small = document.createElement("small");
+      small.className = "mizuha-brand-subtitle";
+      small.textContent = subtitleText;
+      logo.appendChild(small);
+    }
+  })();
+</script>
+</body>
+<script>
+  (() => {
+    const setupMinamoHeaderLinks = () => {
+      const header = document.querySelector("header");
+      if (!header) return;
+
+      const anchors = [
+        ["minamo-service", "サービス説明", "Service"],
+        ["minamo-for-you", "こんな方へ", "For You"],
+        ["minamo-flow", "巡りを整える5つのステップ", "Flow"],
+        ["minamo-price", "料金のご案内", "Price"],
+        ["minamo-faq", "よくある質問", "FAQ"],
+      ];
+
+      const compactText = (value) => (value || "").replace(/\s+/g, "").trim();
+      const findHeading = (label) => {
+        const wanted = compactText(label);
+        const preferred = [...document.querySelectorAll("h1, h2, h3, h4, .section-title, .section-kicker, .eyebrow")];
+        const preferredHit = preferred.find((el) => compactText(el.textContent).includes(wanted));
+        if (preferredHit) return preferredHit;
+        return [...document.body.querySelectorAll("section *, main *, article *, div, p")]
+          .find((el) => compactText(el.textContent) === wanted);
+      };
+
+      anchors.forEach(([id, label]) => {
+        document.querySelectorAll(`#${id}`).forEach((el) => el.removeAttribute("id"));
+        document.querySelectorAll(`[data-minamo-anchor="${id}"]`).forEach((el) => el.remove());
+        const heading = findHeading(label);
+        if (!heading) return;
+        const anchor = document.createElement("span");
+        anchor.id = id;
+        anchor.dataset.minamoAnchor = id;
+        anchor.setAttribute("aria-hidden", "true");
+        anchor.style.display = "block";
+        anchor.style.height = "1px";
+        anchor.style.marginTop = "-1px";
+        heading.parentNode.insertBefore(anchor, heading);
+      });
+
+      const nav = header.querySelector("nav");
+      if (nav) {
+        nav.innerHTML = anchors
+          .map(([id, , label]) => `<a href="#${id}">${label}</a>`)
+          .join("") + `<a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>`;
+      }
+
+      const logo = [...header.querySelectorAll("a, span, div")]
+        .find((el) => compactText(el.childNodes[0]?.textContent || el.textContent) === "MIZUHA");
+      if (logo) {
+        logo.removeAttribute("href");
+        logo.style.cursor = "default";
+      }
+
+      header.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const target = document.querySelector(link.getAttribute("href"));
+          if (!target) return;
+          event.preventDefault();
+          const headerHeight = header.getBoundingClientRect().height || 92;
+          const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 72;
+          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+          history.replaceState(null, "", link.getAttribute("href"));
+        });
+      });
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupMinamoHeaderLinks);
+    } else {
+      setupMinamoHeaderLinks();
+    }
+    window.addEventListener("load", setupMinamoHeaderLinks, { once: true });
+  })();
+</script>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-brand-subtitle {
+    display: block !important;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const subtitleText = "安心の場・調和の世界";
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+    if (!logo) return;
+    header.querySelectorAll(".mizuha-brand-subtitle").forEach((el) => el.remove());
+    [...logo.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes(subtitleText)) {
+        node.textContent = node.textContent.replaceAll(subtitleText, "").trim();
+      }
+    });
+    logo.removeAttribute("href");
+    logo.style.cursor = "default";
+    const small = document.createElement("small");
+    small.className = "mizuha-brand-subtitle";
+    small.textContent = subtitleText;
+    logo.appendChild(small);
+  })();
+</script>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-current-service {
+    display: block !important;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const serviceName = "MINAMO";
+    const header = document.querySelector("header");
+    if (!header) return;
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+    if (logo) {
+      header.querySelectorAll(".mizuha-brand-subtitle, .mizuha-current-service").forEach((el) => el.remove());
+      [...logo.childNodes].forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          node.textContent = node.textContent
+            .replaceAll("安心の場・調和の世界", "")
+            .replaceAll(serviceName, "")
+            .trim() || "MIZUHA";
+        }
+      });
+      if (logo.tagName.toLowerCase() === "a") {
+        logo.href = "mizuha.html";
+      } else {
+        const link = document.createElement("a");
+        link.href = "mizuha.html";
+        link.className = logo.className;
+        link.innerHTML = "MIZUHA";
+        logo.replaceWith(link);
+      }
+      const updatedLogo = [...header.querySelectorAll("a")]
+        .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+      if (updatedLogo && !updatedLogo.querySelector(".mizuha-current-service")) {
+        const small = document.createElement("small");
+        small.className = "mizuha-current-service";
+        small.textContent = serviceName;
+        updatedLogo.appendChild(small);
+      }
+    }
+
+    const replaceText = (from, to) => {
+      [...document.body.querySelectorAll("li, p, dd, div")]
+        .filter((el) => el.children.length === 0 && compact(el.textContent) === compact(from))
+        .forEach((el) => { el.textContent = to; });
+    };
+
+    [
+      ["食べることとの関係を見つめ直したい", "身体や心の流れが滞っていると感じる"],
+      ["身体の声を聴けるようになりたい", "何から整えればいいかわからない"],
+      ["忙しさの中で、自分を大切にする余裕が少なくなっている", "食と暮らしを見直したい"],
+      ["心と身体の両方を整えたい", "本来の軽やかな巡りを取り戻したい"],
+      ["現在の状態やお悩みを伺い、あなたに合った整え方をご提案します。", "今の身体や暮らしの状態を伺いながら、内なる水の巡りを見つめ、あなたに合った整え方をご提案します。"],
+      ["いいえ。食育や食習慣の見直しなど、今の状態に合わせた整え方をご提案しています。", "今の巡りに合わせて、食事の整え方や生活習慣の見直しから始めることもできます。"]
+    ].forEach(([from, to]) => replaceText(from, to));
+  })();
+</script>
+<script>
+  (() => {
+    const from = "人の身体の大部分は、水でできています。その水は、日々の食事や暮らし方の影響を受けながら、絶えず巡っています。";
+    const to = [
+      "人の身体の多くは水でできています。",
+      "",
+      "食べるもの、眠り、呼吸、",
+      "そして日々の習慣。",
+      "",
+      "そのすべてが、",
+      "心と身体の水面に映し出されています。"
+    ].join("\n");
+
+    const compact = (value) => (value || "").replace(/\s+/g, "");
+    const target = [...document.querySelectorAll("p, div")]
+      .find((el) => el.children.length === 0 && compact(el.textContent).includes(compact(from)));
+
+    if (target) {
+      target.textContent = target.textContent.replace(from, to);
+      target.style.whiteSpace = "pre-line";
+      return;
+    }
+
+    const body = [...document.querySelectorAll("p, div")]
+      .filter((el) => el.children.length === 0)
+      .find((el) => compact(el.textContent).includes("人の身体の大部分は、水でできています。"));
+    if (body) {
+      body.textContent = body.textContent
+        .replace("人の身体の大部分は、水でできています。", to)
+        .replace("その水は、日々の食事や暮らし方の影響を受けながら、絶えず巡っています。", "");
+      body.style.whiteSpace = "pre-line";
+    }
+  })();
+</script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+    if (!logo) return;
+
+    if (logo.tagName.toLowerCase() === "a") {
+      logo.setAttribute("href", "mizuha.html");
+      logo.style.cursor = "pointer";
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.href = "mizuha.html";
+    link.className = logo.className;
+    link.innerHTML = logo.innerHTML || "MIZUHA";
+    logo.replaceWith(link);
+  })();
+</script>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-logo-clean {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.22rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    line-height: 1.1 !important;
+  }
+
+  header .mizuha-logo-clean span {
+    display: block !important;
+  }
+
+  header .mizuha-logo-clean small {
+    display: block !important;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const oldLogo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.textContent).startsWith("MIZUHA"));
+    if (!oldLogo) return;
+    const logo = document.createElement("a");
+    logo.href = "mizuha.html";
+    logo.className = `${oldLogo.className || ""} mizuha-logo-clean`.trim();
+    logo.innerHTML = `<span>MIZUHA</span><small>MINAMO</small>`;
+    oldLogo.replaceWith(logo);
+  })();
+</script>
+<script>
+  (() => {
+    const goHome = (event) => {
+      const logo = event.target.closest(".mizuha-logo-clean");
+      if (!logo) return;
+      event.preventDefault();
+      window.location.href = "mizuha.html";
+    };
+
+    const restoreLogoLink = () => {
+      const header = document.querySelector("header");
+      if (!header) return;
+      const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+      const logo = [...header.querySelectorAll("a, div, span")]
+        .find((el) => compact(el.textContent).startsWith("MIZUHA"));
+      if (!logo) return;
+      logo.classList.add("mizuha-logo-clean");
+      if (logo.tagName.toLowerCase() === "a") {
+        logo.setAttribute("href", "mizuha.html");
+      }
+      logo.style.cursor = "pointer";
+      logo.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.href = "mizuha.html";
+      });
+    };
+
+    document.addEventListener("click", goHome, true);
+    restoreLogoLink();
+    window.addEventListener("load", restoreLogoLink);
+    setTimeout(restoreLogoLink, 300);
+  })();
+</script>
+<style>
+  header #mizuha-logo-final {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.22rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    line-height: 1.1 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  header #mizuha-logo-final::after,
+  header #mizuha-logo-final *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header #mizuha-logo-final span {
+    display: block !important;
+    font: inherit !important;
+    color: inherit !important;
+  }
+
+  header #mizuha-logo-final small {
+    display: block !important;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  header .mizuha-logo-hidden {
+    display: none !important;
+  }
+</style>
+<script>
+  (() => {
+    const normalizeMinamoLogo = () => {
+      const header = document.querySelector("header");
+      if (!header) return;
+
+      const nav = header.querySelector("nav");
+      let finalLogo = header.querySelector("#mizuha-logo-final");
+
+      if (!finalLogo) {
+        finalLogo = document.createElement("a");
+        finalLogo.id = "mizuha-logo-final";
+        header.insertBefore(finalLogo, header.firstElementChild || header.firstChild);
+      }
+
+      finalLogo.href = "mizuha.html";
+      finalLogo.innerHTML = "<span>MIZUHA</span><small>MINAMO</small>";
+      finalLogo.onclick = (event) => {
+        event.preventDefault();
+        window.location.href = "mizuha.html";
+      };
+
+      [...header.querySelectorAll("a, div, span, small")].forEach((el) => {
+        if (el === finalLogo || finalLogo.contains(el) || (nav && nav.contains(el))) return;
+        const text = (el.textContent || "").replace(/\s+/g, "");
+        if (text.includes("MIZUHA") || text.includes("安心の場・調和の世界") || text === "MINAMO") {
+          el.classList.add("mizuha-logo-hidden");
+          el.setAttribute("aria-hidden", "true");
+        }
+      });
+    };
+
+    normalizeMinamoLogo();
+    document.addEventListener("DOMContentLoaded", normalizeMinamoLogo);
+    window.addEventListener("load", normalizeMinamoLogo);
+    setTimeout(normalizeMinamoLogo, 100);
+    setTimeout(normalizeMinamoLogo, 500);
+  })();
+</script>
+<script>
+  (() => {
+    const setupServiceNav = () => {
+      const header = document.querySelector("header");
+      const nav = header?.querySelector("nav");
+      if (!header || !nav) return;
+
+      const items = [
+        ["service-nav-service", "サービス説明", "Service"],
+        ["service-nav-for-you", "こんな方へ", "For You"],
+        ["service-nav-flow", "セッションの流れ", "Flow"],
+        ["service-nav-price", "料金", "Price"],
+        ["service-nav-faq", "よくある質問", "FAQ"],
+      ];
+
+      const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+      const findHeading = (label) => {
+        const wanted = compact(label);
+        return [...document.querySelectorAll("h1,h2,h3,h4,p,div,span")]
+          .find((el) => compact(el.textContent) === wanted || compact(el.textContent).startsWith(wanted));
+      };
+
+      items.forEach(([id, label]) => {
+        document.querySelectorAll(`#${id}`).forEach((el) => el.removeAttribute("id"));
+        const heading = findHeading(label);
+        if (!heading) return;
+        const target = heading.closest("section") || heading.parentElement || heading;
+        target.id = id;
+        target.style.scrollMarginTop = "150px";
+      });
+
+      nav.innerHTML = items
+        .map(([id, , label]) => `<a href="#${id}">${label}</a>`)
+        .join("") + `<a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>`;
+    };
+
+    setupServiceNav();
+    document.addEventListener("DOMContentLoaded", setupServiceNav);
+    window.addEventListener("load", setupServiceNav);
+    setTimeout(setupServiceNav, 300);
+  })();
+</script>
+<script>
+  (() => {
+    const setupStableServiceNav = () => {
+      const header = document.querySelector("header");
+      const nav = header?.querySelector("nav");
+      if (!header || !nav) return;
+
+      const items = [
+        ["stable-service", ["サービス説明"], "Service"],
+        ["stable-for-you", ["こんな方へ"], "For You"],
+        ["stable-flow", ["巡りを整える5つのステップ", "セッションの流れ"], "Flow"],
+        ["stable-price", ["料金のご案内", "料金"], "Price"],
+        ["stable-faq", ["よくある質問"], "FAQ"],
+      ];
+
+      const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+      const findHeading = (labels) => {
+        const wanted = labels.map(compact);
+        const headings = [...document.querySelectorAll("h1,h2,h3,h4,.section-title,.section-kicker,p,div,span,strong")];
+        return headings.find((el) => {
+          if (el.closest("header")) return false;
+          const text = compact(el.textContent);
+          return wanted.some((label) => text === label || text.startsWith(label));
+        });
+      };
+
+      items.forEach(([id, labels]) => {
+        document.querySelectorAll(`[data-stable-anchor="${id}"]`).forEach((el) => el.remove());
+        const heading = findHeading(labels);
+        if (!heading) return;
+        const anchor = document.createElement("span");
+        anchor.id = id;
+        anchor.dataset.stableAnchor = id;
+        anchor.setAttribute("aria-hidden", "true");
+        anchor.style.display = "block";
+        anchor.style.height = "1px";
+        anchor.style.marginTop = "-1px";
+        heading.parentNode.insertBefore(anchor, heading);
+      });
+
+      nav.innerHTML = items
+        .map(([id, , label]) => `<a href="#${id}">${label}</a>`)
+        .join("") + `<a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>`;
+
+      header.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const target = document.querySelector(link.getAttribute("href"));
+          if (!target) return;
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const headerHeight = header.getBoundingClientRect().height || 92;
+          const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 72;
+          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+          history.replaceState(null, "", link.getAttribute("href"));
+        }, true);
+      });
+    };
+
+    setupStableServiceNav();
+    document.addEventListener("DOMContentLoaded", setupStableServiceNav);
+    window.addEventListener("load", setupStableServiceNav);
+    setTimeout(setupStableServiceNav, 200);
+    setTimeout(setupStableServiceNav, 700);
+  })();
+</script>
+</html>

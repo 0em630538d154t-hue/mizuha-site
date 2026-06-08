@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MEGURI | MIZUHA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>:root{--off:#fdfcf8;--blue:#d7edf2;--text:#344f57;--muted:#5f7378;--deep:#263f46;--gold:#b8a56f;--line:rgba(52,79,87,.18);--serif:"Noto Serif JP",serif;--latin:"Cormorant Garamond",serif;--sans:"Noto Sans JP",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,var(--off),#f7fbfa,var(--off));color:var(--text);font-family:var(--sans);font-size:18px;font-weight:300;line-height:1.9}a{text-decoration:none;color:inherit}.header{position:fixed;z-index:10;inset:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(22px,5vw,72px);background:rgba(253,252,248,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(52,79,87,.1)}.brand{font-family:var(--latin);font-size:28px;color:var(--deep)}.nav{display:flex;gap:24px;color:var(--muted);font-family:var(--latin);font-size:18px}.hero,.section{position:relative;overflow:hidden;padding:clamp(96px,13vw,170px) clamp(22px,5vw,76px)}.hero{min-height:78svh;display:grid;align-items:center;padding-top:126px;background:linear-gradient(90deg,rgba(253,252,248,.95),rgba(253,252,248,.72),rgba(215,237,242,.34)),linear-gradient(180deg,#fbfaf4,#eaf6f7)}.hero:before{content:"";position:absolute;right:-10%;bottom:8%;width:min(70vw,850px);aspect-ratio:1/.42;border:1px solid rgba(52,79,87,.14);border-radius:50%;transform:rotate(-7deg)}.hero:after{content:"";position:absolute;right:12%;top:19%;width:128px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fffdf4 0 42%,rgba(255,253,244,.65) 58%,transparent 74%);box-shadow:0 0 72px rgba(184,165,111,.34)}.inner{position:relative;z-index:2;width:min(960px,100%);margin:0 auto}.narrow{width:min(760px,100%)}.label{font-family:var(--latin);font-size:18px;letter-spacing:.08em;color:var(--gold);margin:0 0 18px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--deep)}h1{font-family:var(--latin);font-size:clamp(64px,10vw,116px);line-height:.95;margin-bottom:18px}.jp-name{margin-bottom:18px;color:var(--gold);font-family:var(--serif);font-size:clamp(23px,3vw,34px);line-height:1.4}.service-title{margin-bottom:26px;color:var(--deep);font-family:var(--serif);font-size:clamp(28px,4vw,46px);line-height:1.45}.lead{font-size:clamp(19px,2vw,24px);line-height:1.9;color:var(--muted);max-width:720px}h2{font-size:clamp(30px,4vw,46px);margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.panel{padding:36px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.56)}.panel ul{margin:0;padding-left:1.2em}.panel li{margin:.45em 0}.flow{counter-reset:step;display:grid;gap:16px}.flow p{counter-increment:step;margin:0;padding:22px 0;border-bottom:1px solid var(--line)}.flow p:before{content:counter(step,decimal-leading-zero);font-family:var(--latin);color:var(--gold);margin-right:18px}.price{font-size:clamp(24px,3vw,34px);color:var(--deep)}.cta{text-align:center;background:linear-gradient(180deg,var(--blue),#edf7f8)}.button{display:inline-flex;min-height:56px;align-items:center;justify-content:center;padding:13px 34px;border:1px solid rgba(184,165,111,.66);border-radius:999px;background:rgba(255,255,255,.72);color:var(--deep)}.line-qr{width:132px;height:132px;margin:28px auto 10px;padding:10px;border:1px solid rgba(52,79,87,.14);border-radius:8px;background:rgba(255,255,255,.64)}.line-qr img{display:block;width:100%;height:100%}.qr-note{margin:0;color:var(--muted);font-size:14px}.floating-line{position:fixed;right:18px;bottom:18px;z-index:40;display:none;min-height:52px;align-items:center;justify-content:center;padding:12px 20px;border:1px solid rgba(184,165,111,.68);border-radius:999px;background:rgba(253,252,248,.92);box-shadow:0 12px 32px rgba(52,79,87,.12);color:var(--deep);font-size:16px;backdrop-filter:blur(14px)}.footer{padding:44px 22px;text-align:center;color:var(--muted);background:var(--off)}@media(max-width:760px){body{font-size:17px}.nav{display:none}.hero,.section{padding:92px 23px}.hero{padding-top:118px}.grid{grid-template-columns:1fr}.panel{padding:28px}.button{width:100%;font-size:18px}.floating-line{display:inline-flex}}</style>
+<style>
+header a:first-of-type::after,
+.brand::after,
+.site-brand::after,
+.site-logo::after,
+.logo::after {
+  content: "安心の場・調和の世界";
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(79, 98, 104, 0.74);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+</style>
+<style>
+  header a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mizuha-brand-mark::after {
+    content: "安心の場・調和の世界" !important;
+    display: block !important;
+    display: block;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+</head>
+  <body>
+    <header class="header"><a class="brand" href="mizuha.html">MIZUHA</a><nav class="nav"><a href="mizuha.html#menu">Menu</a><a href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a></nav></header>
+    <main>
+      <section class="hero"><div class="inner"><p class="label">MIZUHA MENU</p><h1>MEGURI</h1><p class="jp-name">巡</p><p class="service-title">九星気学・巡りのセッション</p><p class="lead">自然の巡りと自分の流れを知り、今の季節に合う歩みを見つめる時間。</p></div></section>
+      <section class="section"><div class="inner grid"><div><p class="label">Service</p><h2>サービス説明</h2><p>MEGURIは、九星気学を通して自分の流れや時の巡りを見つめるセッションです。占いとして当てるのではなく、自然のリズムと調和するための静かな指針として扱います。</p></div><div class="panel"><h3>こんな方へ</h3><ul><li>人生の流れを見つめ直したい</li><li>今のタイミングを知りたい</li><li>選択の前に自分を整えたい</li><li>自然な巡りに沿って進みたい</li></ul></div></div></section>
+      <section class="section"><div class="inner grid"><div><p class="label">Flow</p><h2>セッションの流れ</h2><div class="flow"><p>LINEよりご予約</p><p>生年月日と相談内容を確認</p><p>九星の流れを読み解く</p><p>今のテーマを整理する</p><p>日々に戻るための小さな行動を確認</p></div></div><div class="panel"><p class="label">Price</p><h2>料金（仮）</h2><p class="price">60分 11,000円</p><p>90分 16,500円</p></div></div></section>
+      <section class="section cta"><div class="inner narrow"><p class="label">Reserve</p><h2>静かに、今のあなたから。</h2><a class="button" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a></div></section>
+    </main>
+    <a class="floating-line" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+    <footer class="footer">© MIZUHA</footer>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header || header.querySelector('a[href*="#for-you"]')) return;
+    const menuLink = [...header.querySelectorAll("a")].find((link) => link.getAttribute("href")?.includes("#menu"));
+    if (!menuLink) return;
+    const forYou = document.createElement("a");
+    forYou.href = "mizuha.html#for-you";
+    forYou.textContent = "For You";
+    menuLink.before(forYou);
+  })();
+</script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => el.textContent.trim() === "MIZUHA");
+    if (logo) logo.classList.add("mizuha-brand-mark");
+  })();
+</script>
+<style>
+  header a::after,
+  header .brand::after,
+  header .site-brand::after,
+  header .site-logo::after,
+  header .logo::after,
+  header .mizuha-brand-mark::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mizuha-brand-subtitle {
+    display: block;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const subtitleText = "安心の場・調和の世界";
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => (el.childNodes[0]?.textContent || el.textContent || "").trim().startsWith("MIZUHA"));
+    if (!logo) return;
+    [...logo.querySelectorAll(".mizuha-brand-subtitle")].slice(1).forEach((el) => el.remove());
+    [...logo.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes(subtitleText)) {
+        node.textContent = node.textContent.replace(subtitleText, "").trim();
+      }
+    });
+    if (!logo.querySelector(".mizuha-brand-subtitle")) {
+      const small = document.createElement("small");
+      small.className = "mizuha-brand-subtitle";
+      small.textContent = subtitleText;
+      logo.appendChild(small);
+    }
+  })();
+</script>
+</body>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-brand-subtitle {
+    display: block !important;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const subtitleText = "安心の場・調和の世界";
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+    if (!logo) return;
+    header.querySelectorAll(".mizuha-brand-subtitle").forEach((el) => el.remove());
+    [...logo.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes(subtitleText)) {
+        node.textContent = node.textContent.replaceAll(subtitleText, "").trim();
+      }
+    });
+    const small = document.createElement("small");
+    small.className = "mizuha-brand-subtitle";
+    small.textContent = subtitleText;
+    logo.appendChild(small);
+  })();
+</script>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-current-service {
+    display: block !important;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const serviceName = "MEGURI";
+    const header = document.querySelector("header");
+    if (!header) return;
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+    if (!logo) return;
+    header.querySelectorAll(".mizuha-brand-subtitle, .mizuha-current-service").forEach((el) => el.remove());
+    [...logo.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) node.textContent = node.textContent.replaceAll("安心の場・調和の世界", "").replaceAll(serviceName, "").trim() || "MIZUHA";
+    });
+    if (logo.tagName.toLowerCase() === "a") logo.href = "mizuha.html";
+    const small = document.createElement("small");
+    small.className = "mizuha-current-service";
+    small.textContent = serviceName;
+    logo.appendChild(small);
+  })();
+</script>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-logo-clean {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.22rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    line-height: 1.1 !important;
+  }
+
+  header .mizuha-logo-clean span {
+    display: block !important;
+  }
+
+  header .mizuha-logo-clean small {
+    display: block !important;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const oldLogo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.textContent).startsWith("MIZUHA"));
+    if (!oldLogo) return;
+    const logo = document.createElement("a");
+    logo.href = "mizuha.html";
+    logo.className = `${oldLogo.className || ""} mizuha-logo-clean`.trim();
+    logo.innerHTML = `<span>MIZUHA</span><small>MEGURI</small>`;
+    oldLogo.replaceWith(logo);
+  })();
+</script>
+<script>
+  (() => {
+    const setupServiceNav = () => {
+      const header = document.querySelector("header");
+      const nav = header?.querySelector("nav");
+      if (!header || !nav) return;
+
+      const items = [
+        ["service-nav-service", "サービス説明", "Service"],
+        ["service-nav-for-you", "こんな方へ", "For You"],
+        ["service-nav-flow", "セッションの流れ", "Flow"],
+        ["service-nav-price", "料金", "Price"],
+        ["service-nav-faq", "よくある質問", "FAQ"],
+      ];
+
+      const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+      const findHeading = (label) => {
+        const wanted = compact(label);
+        return [...document.querySelectorAll("h1,h2,h3,h4,p,div,span")]
+          .find((el) => compact(el.textContent) === wanted || compact(el.textContent).startsWith(wanted));
+      };
+
+      items.forEach(([id, label]) => {
+        document.querySelectorAll(`#${id}`).forEach((el) => el.removeAttribute("id"));
+        const heading = findHeading(label);
+        if (!heading) return;
+        const target = heading.closest("section") || heading.parentElement || heading;
+        target.id = id;
+        target.style.scrollMarginTop = "150px";
+      });
+
+      nav.innerHTML = items
+        .map(([id, , label]) => `<a href="#${id}">${label}</a>`)
+        .join("") + `<a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>`;
+    };
+
+    setupServiceNav();
+    document.addEventListener("DOMContentLoaded", setupServiceNav);
+    window.addEventListener("load", setupServiceNav);
+    setTimeout(setupServiceNav, 300);
+  })();
+</script>
+<script>
+  (() => {
+    const setupStableServiceNav = () => {
+      const header = document.querySelector("header");
+      const nav = header?.querySelector("nav");
+      if (!header || !nav) return;
+
+      const items = [
+        ["stable-service", ["サービス説明"], "Service"],
+        ["stable-for-you", ["こんな方へ"], "For You"],
+        ["stable-flow", ["巡りを整える5つのステップ", "セッションの流れ"], "Flow"],
+        ["stable-price", ["料金のご案内", "料金"], "Price"],
+        ["stable-faq", ["よくある質問"], "FAQ"],
+      ];
+
+      const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+      const findHeading = (labels) => {
+        const wanted = labels.map(compact);
+        const headings = [...document.querySelectorAll("h1,h2,h3,h4,.section-title,.section-kicker,p,div,span,strong")];
+        return headings.find((el) => {
+          if (el.closest("header")) return false;
+          const text = compact(el.textContent);
+          return wanted.some((label) => text === label || text.startsWith(label));
+        });
+      };
+
+      items.forEach(([id, labels]) => {
+        document.querySelectorAll(`[data-stable-anchor="${id}"]`).forEach((el) => el.remove());
+        const heading = findHeading(labels);
+        if (!heading) return;
+        const anchor = document.createElement("span");
+        anchor.id = id;
+        anchor.dataset.stableAnchor = id;
+        anchor.setAttribute("aria-hidden", "true");
+        anchor.style.display = "block";
+        anchor.style.height = "1px";
+        anchor.style.marginTop = "-1px";
+        heading.parentNode.insertBefore(anchor, heading);
+      });
+
+      nav.innerHTML = items
+        .map(([id, , label]) => `<a href="#${id}">${label}</a>`)
+        .join("") + `<a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>`;
+
+      header.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const target = document.querySelector(link.getAttribute("href"));
+          if (!target) return;
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const headerHeight = header.getBoundingClientRect().height || 92;
+          const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 72;
+          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+          history.replaceState(null, "", link.getAttribute("href"));
+        }, true);
+      });
+    };
+
+    setupStableServiceNav();
+    document.addEventListener("DOMContentLoaded", setupStableServiceNav);
+    window.addEventListener("load", setupStableServiceNav);
+    setTimeout(setupStableServiceNav, 200);
+    setTimeout(setupStableServiceNav, 700);
+  })();
+</script>
+</html>

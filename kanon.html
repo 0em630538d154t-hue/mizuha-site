@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KANON | MIZUHA</title>
+  <style>
+    :root {
+      --bg: #fdfcf8;
+      --paper: #f4f0e8;
+      --blue: #ddeff3;
+      --text: #4f6268;
+      --muted: rgba(79, 98, 104, 0.72);
+      --line: rgba(79, 98, 104, 0.15);
+      --gold: #c8b98a;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Yu Gothic", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(221, 239, 243, 0.62), transparent 28rem),
+        radial-gradient(circle at 22% 8%, rgba(200, 185, 138, 0.18), transparent 24rem),
+        linear-gradient(180deg, #fdfcf8 0%, #f6f2ea 52%, #fdfcf8 100%);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.1rem clamp(1.2rem, 4vw, 3.2rem);
+      background: rgba(253, 252, 248, 0.86);
+      border-bottom: 1px solid rgba(79, 98, 104, 0.09);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+      font-family: var(--serif);
+      font-size: 1.34rem;
+      letter-spacing: 0.14em;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .brand small {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(0.8rem, 2vw, 1.4rem);
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: rgba(79, 98, 104, 0.82);
+    }
+
+    nav a {
+      padding: 0.35rem 0;
+    }
+
+    .line-link {
+      border: 1px solid rgba(200, 185, 138, 0.72);
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      color: #5f664f;
+      background: rgba(255, 255, 255, 0.36);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      scroll-margin-top: 6.5rem;
+      padding: clamp(4.5rem, 9vw, 8rem) clamp(1.35rem, 5vw, 5rem);
+    }
+
+    #service,
+    #flow,
+    #price {
+      scroll-margin-top: 1.2rem;
+    }
+
+    #for-you {
+      scroll-margin-top: 6.5rem;
+    }
+
+    .inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding-top: clamp(5rem, 9vw, 8rem);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: clamp(1rem, 8vw, 8rem);
+      top: 16%;
+      width: clamp(13rem, 26vw, 23rem);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 38% 32%, rgba(255, 255, 255, 0.92), rgba(221, 239, 243, 0.45) 42%, rgba(200, 185, 138, 0.18) 66%, transparent 70%);
+      opacity: 0.78;
+      filter: blur(0.2px);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 9%;
+      width: min(680px, 82vw);
+      height: 110px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(ellipse at center, rgba(79, 98, 104, 0.12) 0 1px, transparent 1px 18px);
+      opacity: 0.34;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(820px, 100%);
+    }
+
+    .eyebrow {
+      margin: 0 0 1.3rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--text);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(4.2rem, 12vw, 9rem);
+      line-height: 0.96;
+    }
+
+    .jp-title {
+      margin: 1.1rem 0 0;
+      font-size: clamp(1.55rem, 3.4vw, 2.5rem);
+    }
+
+    .service-type {
+      margin: 1.8rem 0 0;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      color: rgba(79, 98, 104, 0.86);
+      line-height: 1.75;
+    }
+
+    .lead {
+      margin: 2.2rem 0 0;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+      line-height: 2;
+      color: rgba(79, 98, 104, 0.92);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.45fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .section-kicker {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3.4vw, 2.9rem);
+      line-height: 1.18;
+    }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.95fr);
+      gap: clamp(3rem, 6vw, 5.5rem);
+      align-items: start;
+    }
+
+    .service-two-column {
+      grid-template-columns: minmax(520px, 1.65fr) minmax(300px, 0.95fr);
+      gap: clamp(3rem, 6vw, 5.5rem);
+      align-items: start;
+    }
+
+    .service-main {
+      min-width: 0;
+    }
+
+    .service-main .body-copy {
+      margin-top: 1.8rem;
+      max-width: 680px;
+    }
+
+    .body-copy {
+      font-size: clamp(1.05rem, 1.45vw, 1.18rem);
+      line-height: 2.05;
+      white-space: pre-line;
+    }
+
+    .for-you-card {
+      margin-top: 1.9rem;
+      padding-top: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .for-you-card h3 {
+      margin: 1rem 0 1rem;
+      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    }
+
+    .for-you-card ul {
+      display: grid;
+      gap: 0.72rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .for-you-card li {
+      position: relative;
+      padding-left: 1rem;
+      line-height: 1.8;
+    }
+
+    .for-you-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.78em;
+      width: 0.34rem;
+      height: 0.34rem;
+      border-radius: 999px;
+      background: rgba(200, 185, 138, 0.78);
+    }
+
+    .flow-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .flow-item {
+      border-top: 1px solid var(--line);
+      padding-top: 1.15rem;
+    }
+
+    .flow-num {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .flow-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .flow-item p {
+      margin: 0;
+      line-height: 1.85;
+      color: rgba(79, 98, 104, 0.86);
+    }
+
+    .price-card {
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+      max-width: 560px;
+    }
+
+    .price-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+    }
+
+    .price-card p {
+      margin: 0 0 1.1rem;
+    }
+
+    .price-lines {
+      display: grid;
+      gap: 0.4rem;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+    }
+
+    .reserve {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(221, 239, 243, 0.35), rgba(253, 252, 248, 0.92));
+    }
+
+    #faq {
+      scroll-margin-top: 1.2rem;
+    }
+
+    #faq .section-grid {
+      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.8fr);
+      gap: clamp(2.4rem, 5vw, 4.5rem);
+    }
+
+    #faq .flow-list {
+      max-width: 820px;
+    }
+
+    #faq h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.45rem);
+      white-space: nowrap;
+    }
+
+    #flow .section-grid {
+      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.8fr);
+      gap: clamp(2.4rem, 5vw, 4.5rem);
+    }
+
+    #flow .flow-list {
+      max-width: 820px;
+    }
+
+    #faq .flow-item strong {
+      margin-bottom: 0.75rem;
+    }
+
+    #faq .faq-list {
+      margin: 0.35rem 0 0.65rem;
+      padding-left: 1.2rem;
+    }
+
+    #faq .faq-list li {
+      line-height: 1.9;
+    }
+
+    .reserve h2 {
+      margin-bottom: 1.7rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      min-height: 54px;
+      border-radius: 999px;
+      border: 1px solid rgba(200, 185, 138, 0.75);
+      background: rgba(255, 255, 255, 0.52);
+      color: #5f664f;
+      letter-spacing: 0.08em;
+    }
+
+    footer {
+      padding: 2.5rem clamp(1.35rem, 5vw, 5rem);
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 820px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .section-grid,
+      .service-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .service-two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .service-main .body-copy {
+        max-width: none;
+      }
+
+      section {
+        scroll-margin-top: 9.5rem;
+      }
+
+      #service,
+      #flow,
+      #price {
+        scroll-margin-top: 2.2rem;
+      }
+
+      #for-you {
+        scroll-margin-top: 9.5rem;
+      }
+
+      #faq {
+        scroll-margin-top: 2.2rem;
+      }
+
+      .button,
+      .line-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="mizuha.html" aria-label="MIZUHAトップへ">
+      <span>MIZUHA</span>
+      <small>KANON</small>
+    </a>
+    <nav aria-label="KANONページ内ナビゲーション">
+      <a href="#service">Service</a>
+      <a href="#for-you">For You</a>
+      <a href="#flow">Flow</a>
+      <a href="#price">Price</a>
+      <a href="#faq">FAQ</a>
+      <a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">MIZUHA MENU</p>
+        <h1>KANON</h1>
+        <p class="jp-title">還音</p>
+        <p class="service-type">シンギングボウル・ティンシャ・<br>チベタンベル・コシチャイム</p>
+        <p class="lead">身体の水に響きを届け、<br>本来の静けさと調和を思い出す時間。</p>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="inner section-grid service-two-column">
+        <div class="service-main">
+          <p class="section-kicker">Service</p>
+          <h2>サービス説明</h2>
+          <p class="body-copy">KANONは、響きを通して内なる水を調律するセッションです。
+
+人の身体の多くは水でできています。
+
+音はその水に触れ、波を起こし、静かに巡りを整えていきます。
+
+シンギングボウルやティンシャの響きは、
+思考では届かない深い部分へと広がり、
+身体だけでなく感情や意識にも静かな変化をもたらします。
+
+響きが届くことで、
+本来の自分へ還るための余白が生まれます。</p>
+        </div>
+        <aside id="for-you" class="for-you-card">
+          <h3>こんな方へ</h3>
+          <ul>
+            <li>頭の中が休まらない</li>
+            <li>深くリラックスしたい</li>
+            <li>感情や緊張をゆるめたい</li>
+            <li>響きや倍音に惹かれる</li>
+            <li>自分の感覚を取り戻したい</li>
+            <li>静かな時間がほしい</li>
+            <li>本来の自分へ還りたい</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">Flow</p>
+          <h2>セッションの流れ</h2>
+        </div>
+        <div class="flow-list">
+          <div class="flow-item">
+            <span class="flow-num">01</span>
+            <strong>LINEよりご予約</strong>
+            <p>ご希望日時やお悩みをお伺いします。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">02</span>
+            <strong>今の状態を確認する</strong>
+            <p>身体や心の状態、気になっていることを簡単にお聞きします。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">03</span>
+            <strong>呼吸を整える</strong>
+            <p>ゆっくり呼吸を深めながら、内側の静けさへ入っていきます。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">04</span>
+            <strong>響きに身をゆだねる</strong>
+            <p>シンギングボウルを中心に、その時に必要な音や振動を届けていきます。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">05</span>
+            <strong>余韻を感じる</strong>
+            <p>響きの余韻を感じながら、本来の自分へ還るための静かな時間を過ごします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="price">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">Price</p>
+          <h2>料金のご案内</h2>
+        </div>
+        <div class="price-card">
+          <h3>響きの調律</h3>
+          <p>響きを通して身体と意識の水面を整えるセッションです。</p>
+          <div class="price-lines">
+            <span>60分　11,000円</span>
+            <span>90分　16,500円</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reserve">
+      <div class="inner">
+        <p class="section-kicker">Reserve</p>
+        <h2>静かに、今のあなたから。</h2>
+        <a class="button" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="flow-list">
+          <div class="flow-item">
+            <strong>Q. 音浴が初めてでも受けられますか？</strong>
+            <p>A. はい。特別な知識や経験は必要ありません。<br>横になって音を感じるだけでも大丈夫です。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. シンギングボウルの音が苦手だったらどうなりますか？</strong>
+            <p>A. 無理に受け続ける必要はありません。<br>その日の状態に合わせて音量や響きを調整しながら進めます。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. 眠ってしまっても大丈夫ですか？</strong>
+            <p>A. はい。眠ってしまう方も多くいらっしゃいます。<br>意識が深く休まることも、KANONの大切な時間のひとつです。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. どんな変化がありますか？</strong>
+            <p>A. 感じ方には個人差がありますが、</p>
+            <ul class="faq-list">
+              <li>頭の中が静かになる</li>
+              <li>呼吸が深くなる</li>
+              <li>感情がゆるむ</li>
+              <li>よく眠れる</li>
+              <li>本来の自分に戻った感覚になる</li>
+            </ul>
+            <p>などのお声をいただいています。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. オンラインでも受けられますか？</strong>
+            <p>A. はい。音浴や瞑想を中心とした内容は、オンラインでもご参加いただけます。</p>
+            <p>画面越しであっても、響きは静かに内なる水へ届いていきます。</p>
+            <p>ただし、身体に直接ボウルを置く施術など、一部の内容は対面のみとなります。<br>より深い響きや振動を感じたい方には、対面セッションをおすすめしています。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. 音だけで変化が起こるのですか？</strong>
+            <p>A. 人の身体の多くは水でできています。</p>
+            <p>響きは身体や意識の深い部分に触れ、静かに巡りを整えるきっかけとなります。</p>
+            <p>KANONでは、変化を起こそうとするのではなく、<br>本来の自分へ還るための余白を大切にしています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">MIZUHA / KANON</div>
+  </footer>
+</body>
+</html>

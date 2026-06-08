@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MIZUHAは、安心の場・調和の世界。内なる水を整え、本来の自分へ還るための静かな体験空間です。"
+    />
+    <title>MIZUHA | 内なる水を整え、本来の自分へ還る</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --off-white: #fdfcf8;
+        --warm-beige: #f4f0e8;
+        --soft-blue: #d7edf2;
+        --water-blue: #c8e2e8;
+        --text: #344f57;
+        --muted: #5f7378;
+        --deep: #263f46;
+        --gold: #b8a56f;
+        --line: rgba(52, 79, 87, 0.18);
+        --serif: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+        --latin: "Cormorant Garamond", Georgia, serif;
+        --sans: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 80% 6%, rgba(184, 165, 111, 0.16), transparent 32rem),
+          linear-gradient(180deg, var(--off-white), #f8fbfa 42%, var(--off-white));
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.9;
+        letter-spacing: 0;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-header {
+        position: fixed;
+        z-index: 30;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px clamp(22px, 5vw, 72px);
+        border-bottom: 1px solid rgba(52, 79, 87, 0.1);
+        background: rgba(253, 252, 248, 0.86);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .brand-name {
+        font-family: var(--latin);
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--deep);
+      }
+
+      .brand-line {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(18px, 2.5vw, 34px);
+        font-family: var(--latin);
+        font-size: 18px;
+        color: var(--muted);
+      }
+
+      .desktop-nav a {
+        transition: color 500ms ease;
+      }
+
+      .desktop-nav a:hover {
+        color: var(--deep);
+      }
+
+      .nav-cta {
+        padding: 8px 19px;
+        border: 1px solid rgba(184, 165, 111, 0.58);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.48);
+      }
+
+      .section-shell {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(96px, 13vw, 178px) clamp(22px, 5vw, 76px);
+      }
+
+      .section-inner {
+        position: relative;
+        z-index: 2;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+      }
+
+      .narrow {
+        width: min(760px, 100%);
+      }
+
+      .hero {
+        display: grid;
+        min-height: 100svh;
+        align-items: center;
+        padding-top: 108px;
+        background:
+          linear-gradient(90deg, rgba(253, 252, 248, 0.94), rgba(253, 252, 248, 0.7) 43%, rgba(215, 237, 242, 0.34)),
+          linear-gradient(180deg, #fbfaf4 0%, #eaf6f7 58%, #fdfcf8 100%);
+      }
+
+      .water-field,
+      .water-field::before,
+      .water-field::after {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        content: "";
+      }
+
+      .water-field::before {
+        top: auto;
+        bottom: -3%;
+        height: 46%;
+        background:
+          repeating-linear-gradient(
+            178deg,
+            rgba(52, 79, 87, 0.08) 0,
+            rgba(52, 79, 87, 0.08) 1px,
+            transparent 1px,
+            transparent 34px
+          ),
+          linear-gradient(180deg, rgba(215, 237, 242, 0.05), rgba(200, 226, 232, 0.5));
+        mask-image: linear-gradient(180deg, transparent, #000 20%, #000 86%, transparent);
+      }
+
+      .water-field::after {
+        top: auto;
+        bottom: 0;
+        height: 38%;
+        background:
+          radial-gradient(ellipse at 72% 32%, rgba(255, 253, 244, 0.72), transparent 25%),
+          linear-gradient(90deg, transparent, rgba(255, 253, 244, 0.5), transparent);
+        opacity: 0.8;
+      }
+
+      .moon {
+        position: absolute;
+        top: 17%;
+        right: 15%;
+        width: clamp(88px, 10vw, 150px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: radial-gradient(circle, #fffdf4 0 39%, rgba(255, 253, 244, 0.72) 55%, transparent 74%);
+        box-shadow: 0 0 76px rgba(184, 165, 111, 0.38);
+      }
+
+      .moon-reflection {
+        position: absolute;
+        right: 10%;
+        bottom: 17%;
+        width: clamp(180px, 28vw, 460px);
+        height: 120px;
+        background:
+          linear-gradient(90deg, transparent, rgba(255, 253, 244, 0.72), transparent),
+          repeating-linear-gradient(
+            180deg,
+            rgba(255, 253, 244, 0.5) 0,
+            rgba(255, 253, 244, 0.5) 2px,
+            transparent 2px,
+            transparent 18px
+          );
+        filter: blur(2px);
+        opacity: 0.72;
+        transform: rotate(-3deg);
+      }
+
+      .ripple {
+        position: absolute;
+        right: 8%;
+        bottom: 18%;
+        width: 48vw;
+        max-width: 720px;
+        aspect-ratio: 1 / 0.42;
+        border: 1px solid rgba(38, 63, 70, 0.14);
+        border-radius: 50%;
+        transform: rotate(-6deg);
+      }
+
+      .ripple-two {
+        right: 3%;
+        bottom: 14%;
+        width: 62vw;
+        border-color: rgba(184, 165, 111, 0.18);
+      }
+
+      .ripple-three {
+        right: 18%;
+        bottom: 11%;
+        width: 31vw;
+        border-color: rgba(255, 255, 255, 0.72);
+      }
+
+      .water-orbit {
+        position: absolute;
+        left: -12%;
+        bottom: 18%;
+        width: min(52vw, 620px);
+        aspect-ratio: 1 / 0.38;
+        border: 1px solid rgba(52, 79, 87, 0.08);
+        border-radius: 50%;
+        transform: rotate(8deg);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        width: min(760px, 100%);
+      }
+
+      .eyebrow,
+      .section-label {
+        margin: 0 0 20px;
+        font-family: var(--latin);
+        font-size: 18px;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        color: var(--deep);
+      }
+
+      h1 {
+        margin-bottom: 28px;
+        font-size: clamp(38px, 6vw, 68px);
+        line-height: 1.42;
+      }
+
+      h2 {
+        margin-bottom: 34px;
+        font-size: clamp(34px, 4.8vw, 52px);
+        line-height: 1.45;
+      }
+
+      h3 {
+        margin-bottom: 16px;
+        font-family: var(--latin);
+        font-size: clamp(34px, 4vw, 46px);
+        line-height: 1.1;
+      }
+
+      .hero-subtitle {
+        max-width: 560px;
+        margin-bottom: 42px;
+        color: var(--muted);
+        font-size: clamp(19px, 2.1vw, 24px);
+        line-height: 2;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 30px;
+        border: 1px solid rgba(184, 165, 111, 0.66);
+        border-radius: 999px;
+        color: var(--deep);
+        font-size: 17px;
+        transition:
+          background 500ms ease,
+          border-color 500ms ease,
+          transform 500ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .primary {
+        background: rgba(184, 165, 111, 0.19);
+      }
+
+      .secondary {
+        background: rgba(255, 255, 255, 0.64);
+      }
+
+      .scroll-cue {
+        position: absolute;
+        z-index: 3;
+        bottom: 30px;
+        left: 50%;
+        width: 28px;
+        height: 48px;
+        transform: translateX(-50%);
+        border: 1px solid rgba(52, 79, 87, 0.34);
+        border-radius: 999px;
+      }
+
+      .scroll-cue span {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: var(--gold);
+        animation: breathe-down 3.8s ease-in-out infinite;
+      }
+
+      .stillness {
+        background:
+          radial-gradient(ellipse at 80% 24%, rgba(255, 253, 244, 0.9), transparent 18rem),
+          radial-gradient(circle at 18% 18%, rgba(215, 237, 242, 0.74), transparent 31rem),
+          linear-gradient(180deg, var(--off-white), #f7fbfa);
+      }
+
+      .stillness::after,
+      .featured::before,
+      .line-cta::before {
+        position: absolute;
+        z-index: 1;
+        width: min(76vw, 880px);
+        aspect-ratio: 1 / 0.38;
+        border: 1px solid rgba(52, 79, 87, 0.11);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+
+      .stillness::after {
+        right: -24%;
+        bottom: 12%;
+        transform: rotate(-8deg);
+      }
+
+      .poem {
+        padding-left: clamp(0px, 4vw, 54px);
+        border-left: 1px solid rgba(184, 165, 111, 0.58);
+        color: var(--text);
+        font-size: clamp(19px, 2vw, 23px);
+      }
+
+      .poem p {
+        margin-bottom: 34px;
+      }
+
+      .for-you {
+        background:
+          linear-gradient(180deg, rgba(244, 240, 232, 0.96), rgba(244, 240, 232, 0.86)),
+          radial-gradient(circle at 72% 30%, rgba(200, 226, 232, 0.58), transparent 26rem);
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+        gap: clamp(46px, 8vw, 110px);
+        align-items: center;
+      }
+
+      .for-list {
+        display: grid;
+        gap: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .for-list p {
+        margin: 0;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+        color: var(--text);
+        font-size: clamp(19px, 2vw, 24px);
+      }
+
+      .menu {
+        background:
+          radial-gradient(ellipse at 18% 12%, rgba(215, 237, 242, 0.7), transparent 28rem),
+          linear-gradient(180deg, var(--off-white), rgba(215, 237, 242, 0.28), var(--off-white));
+      }
+
+      .section-heading {
+        max-width: 760px;
+        margin-bottom: 56px;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .menu-card {
+        display: block;
+        position: relative;
+        min-height: 270px;
+        padding: 30px 24px;
+        border: 1px solid rgba(52, 79, 87, 0.16);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(253, 252, 248, 0.48)),
+          radial-gradient(circle at 80% 14%, rgba(215, 237, 242, 0.7), transparent 9rem);
+        box-shadow: 0 24px 70px rgba(52, 79, 87, 0.055);
+        overflow: hidden;
+      }
+
+      .menu-card::after {
+        position: absolute;
+        right: -42px;
+        bottom: 24px;
+        width: 136px;
+        aspect-ratio: 1 / 0.42;
+        border: 1px solid rgba(52, 79, 87, 0.1);
+        border-radius: 50%;
+        content: "";
+        transform: rotate(-8deg);
+      }
+
+      .menu-card span {
+        display: block;
+        margin-bottom: 26px;
+        font-family: var(--latin);
+        font-size: 15px;
+        color: var(--gold);
+      }
+
+      .menu-card .jp-title {
+        margin: -6px 0 22px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .menu-card p {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        color: var(--text);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .about {
+        background:
+          radial-gradient(circle at 50% 10%, rgba(184, 165, 111, 0.14), transparent 25rem),
+          radial-gradient(ellipse at 50% 82%, rgba(215, 237, 242, 0.52), transparent 28rem),
+          var(--warm-beige);
+        text-align: center;
+      }
+
+      .about-text {
+        color: var(--text);
+        font-size: clamp(22px, 2.6vw, 30px);
+        line-height: 2;
+      }
+
+      .journal {
+        background:
+          radial-gradient(ellipse at 82% 18%, rgba(215, 237, 242, 0.58), transparent 28rem),
+          linear-gradient(180deg, var(--off-white), rgba(244, 240, 232, 0.7));
+      }
+
+      .journal-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 52px;
+      }
+
+      .journal-card {
+        display: block;
+        overflow: hidden;
+        border: 1px solid rgba(52, 79, 87, 0.15);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.62);
+        transition:
+          transform 500ms ease,
+          border-color 500ms ease;
+      }
+
+      .journal-card:hover {
+        border-color: rgba(184, 165, 111, 0.5);
+        transform: translateY(-3px);
+      }
+
+      .journal-image {
+        position: relative;
+        height: 210px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 68% 24%, rgba(255, 253, 244, 0.9), transparent 7rem),
+          repeating-linear-gradient(
+            178deg,
+            rgba(52, 79, 87, 0.07) 0,
+            rgba(52, 79, 87, 0.07) 1px,
+            transparent 1px,
+            transparent 28px
+          ),
+          linear-gradient(145deg, var(--soft-blue), var(--off-white));
+      }
+
+      .journal-image::after {
+        position: absolute;
+        right: -20%;
+        bottom: 18%;
+        width: 84%;
+        aspect-ratio: 1 / 0.4;
+        border: 1px solid rgba(52, 79, 87, 0.13);
+        border-radius: 50%;
+        content: "";
+        transform: rotate(-7deg);
+      }
+
+      .journal-image.sound {
+        background:
+          radial-gradient(circle at 32% 26%, rgba(184, 165, 111, 0.18), transparent 8rem),
+          repeating-radial-gradient(ellipse at 70% 58%, rgba(52, 79, 87, 0.1) 0 1px, transparent 1px 24px),
+          linear-gradient(145deg, rgba(244, 240, 232, 0.95), rgba(215, 237, 242, 0.7));
+      }
+
+      .journal-image.moon {
+        background:
+          radial-gradient(circle at 68% 24%, #fffdf4 0 12%, rgba(255, 253, 244, 0.62) 18%, transparent 29%),
+          repeating-linear-gradient(
+            178deg,
+            rgba(52, 79, 87, 0.06) 0,
+            rgba(52, 79, 87, 0.06) 1px,
+            transparent 1px,
+            transparent 30px
+          ),
+          linear-gradient(145deg, rgba(215, 237, 242, 0.8), rgba(253, 252, 248, 0.92));
+      }
+
+      .journal-body {
+        padding: 26px 24px 28px;
+      }
+
+      .journal-date {
+        margin-bottom: 12px;
+        color: var(--gold);
+        font-family: var(--latin);
+        font-size: 15px;
+      }
+
+      .journal-title {
+        margin: 0;
+        color: var(--deep);
+        font-family: var(--serif);
+        font-size: clamp(20px, 2.1vw, 25px);
+        line-height: 1.55;
+      }
+
+      .journal-more {
+        margin-top: 38px;
+      }
+
+      .line-cta {
+        background:
+          radial-gradient(circle at 50% 18%, rgba(255, 253, 244, 0.95), transparent 16rem),
+          repeating-linear-gradient(
+            178deg,
+            rgba(52, 79, 87, 0.055) 0,
+            rgba(52, 79, 87, 0.055) 1px,
+            transparent 1px,
+            transparent 34px
+          ),
+          linear-gradient(180deg, var(--soft-blue), #edf7f8);
+        text-align: center;
+      }
+
+      .line-cta::before {
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%) rotate(-4deg);
+      }
+
+      .line-button {
+        min-width: 240px;
+        margin-top: 4px;
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .line-qr {
+        width: 132px;
+        height: 132px;
+        margin: 28px auto 10px;
+        padding: 10px;
+        border: 1px solid rgba(52, 79, 87, 0.14);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.64);
+      }
+
+      .line-qr img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .qr-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .floating-line {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 40;
+        display: none;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid rgba(184, 165, 111, 0.68);
+        border-radius: 999px;
+        background: rgba(253, 252, 248, 0.92);
+        box-shadow: 0 12px 32px rgba(52, 79, 87, 0.12);
+        color: var(--deep);
+        font-size: 16px;
+        backdrop-filter: blur(14px);
+      }
+
+      .footer {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 24px;
+        align-items: center;
+        padding: 52px clamp(22px, 5vw, 76px);
+        background: var(--off-white);
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      .footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        font-family: var(--latin);
+        font-size: 18px;
+      }
+
+      .copyright {
+        text-align: right;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 1200ms ease,
+          transform 1200ms ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes breathe-down {
+        0%,
+        100% {
+          opacity: 0.28;
+          transform: translate(-50%, 0);
+        }
+
+        50% {
+          opacity: 0.9;
+          transform: translate(-50%, 14px);
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .menu-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        body {
+          font-size: 17px;
+          line-height: 1.85;
+        }
+
+        .site-header {
+          padding: 17px 22px;
+        }
+
+        .desktop-nav {
+          display: none;
+        }
+
+        .brand-name {
+          font-size: 25px;
+        }
+
+        .hero {
+          min-height: 100svh;
+          padding-top: 108px;
+        }
+
+        .hero-content {
+          padding-bottom: 50px;
+        }
+
+        .moon {
+          top: 13%;
+          right: 11%;
+        }
+
+        .moon-reflection {
+          right: -12%;
+          bottom: 20%;
+          width: 76vw;
+        }
+
+        .ripple {
+          right: -30%;
+          bottom: 19%;
+          width: 116vw;
+        }
+
+        .hero-subtitle {
+          margin-bottom: 34px;
+        }
+
+        .button-row,
+        .button {
+          width: 100%;
+        }
+
+        .button {
+          min-height: 56px;
+          font-size: 18px;
+        }
+
+        .floating-line {
+          display: inline-flex;
+        }
+
+        .section-shell {
+          padding: 96px 23px;
+        }
+
+        .poem {
+          padding-left: 24px;
+        }
+
+        .two-column {
+          grid-template-columns: 1fr;
+        }
+
+        .menu-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .journal-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .journal-image {
+          height: 190px;
+        }
+
+        .menu-card {
+          min-height: auto;
+          padding: 32px 28px;
+        }
+
+        .menu-card span {
+          margin-bottom: 24px;
+        }
+
+        .footer {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .copyright {
+          text-align: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 1ms !important;
+          scroll-behavior: auto !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+<style>
+  header a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mizuha-brand-mark::after {
+    content: "安心の場・調和の世界" !important;
+    display: block !important;
+    display: block;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+</head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="MIZUHA トップへ">
+        <span class="brand-name">MIZUHA</span>
+        <span class="brand-line">安心の場・調和の世界</span>
+      </a>
+      <nav class="desktop-nav" aria-label="メインナビゲーション">
+        <a href="#stillness">Stillness</a>
+        <a href="#for-you">For You</a>
+        <a href="#menu">Menu</a>
+        <a href="journal.html">Journal</a>
+        <a href="#about">About</a>
+        <a href="https://lin.ee/ngiKEYW" class="nav-cta" target="_blank" rel="noopener noreferrer">LINE</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section-shell" aria-label="MIZUHA">
+        <div class="water-field" aria-hidden="true">
+          <span class="moon"></span>
+          <span class="moon-reflection"></span>
+          <span class="ripple ripple-one"></span>
+          <span class="ripple ripple-two"></span>
+          <span class="ripple ripple-three"></span>
+          <span class="water-orbit"></span>
+        </div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">MIZUHA</p>
+          <h1>水が澄むと、<br />本来のわたしが映りはじめる。</h1>
+          <p class="hero-subtitle">
+            安心の場・調和の世界。<br />
+            内なる水を整え、本来の自分へ還る。
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#stillness">静けさへ</a>
+              <a class="button secondary" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#stillness" aria-label="Stillnessへ移動">
+          <span></span>
+        </a>
+      </section>
+
+      <section id="stillness" class="stillness section-shell">
+        <div class="section-inner narrow reveal">
+          <p class="section-label">Stillness</p>
+          <h2>澄むほどに、わたしは戻る。</h2>
+          <div class="poem">
+            <p>
+              水は、わたしを映す。<br />
+              感情を映し、音に触れ、言葉に響く。
+            </p>
+            <p>MIZUHAは、内なる水を澄ませる場所。</p>
+            <p>
+              食を整える。<br />
+              音にゆだねる。<br />
+              呼吸を深める。<br />
+              感情と言葉をほどく。
+            </p>
+            <p>
+              静かな水面のように、<br />
+              本来のわたしが映りはじめる。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="for-you" class="for-you section-shell">
+        <div class="section-inner two-column">
+          <div class="reveal">
+            <p class="section-label">For You</p>
+            <h2>もう、頑張り続けなくていい。</h2>
+          </div>
+          <div class="for-list reveal">
+            <p>心と身体が疲れている</p>
+            <p>自分を見つめ直したい</p>
+            <p>安心できる場所がほしい</p>
+            <p>感情を整理したい</p>
+            <p>本来の自分に戻りたい</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu section-shell">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="section-label">Menu</p>
+            <h2>内なる水を整える入口。</h2>
+          </div>
+          <div class="menu-grid">
+            <a class="menu-card reveal" href="minamo.html">
+              <span>Fasting</span>
+              <h3>MINAMO</h3>
+              <p class="jp-title">ファスティング・食育</p>
+              <p>
+                心と身体の水面を静め、食を通して内なる巡りを思い出す時間。
+              </p>
+            </a>
+            <a class="menu-card reveal" href="kanon.html">
+              <span>Sound</span>
+              <h3>KANON</h3>
+              <p class="jp-title">還音 / シンギングボウル・コシチャイム</p>
+              <p>
+                響きによる調律。音の波にゆだね、内なる流れをやさしく整える。
+              </p>
+            </a>
+            <a class="menu-card reveal" href="sumi.html">
+              <span>Access</span>
+              <h3>SUMI</h3>
+              <p class="jp-title">Access Bars・Access Facelift・ボディプロセス</p>
+              <p>
+                感情や思考をほどき、内なる静けさへ還る入口。
+              </p>
+            </a>
+            <a class="menu-card reveal" href="meguri.html">
+              <span>Cycles</span>
+              <h3>MEGURI</h3>
+              <p class="jp-title">九星気学・巡りのセッション</p>
+              <p>
+                自然の巡りと自分の流れを知り、今の季節に合う歩みを見つめる時間。
+              </p>
+            </a>
+            <a class="menu-card reveal" href="utsushi.html">
+              <span>Reflection</span>
+              <h3>UTSUSHI</h3>
+              <p class="jp-title">カードリーディング・内観サポート・問いかけセッション</p>
+              <p>
+                心の水面に映る声を見つめ、問いから本来のわたしへ戻っていく。
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section-shell">
+        <div class="section-inner narrow reveal">
+          <p class="section-label">About MIZUHA</p>
+          <h2>本来の自分へ還る場所。</h2>
+          <p class="about-text">
+            変わろうとしなくていい。<br />
+            ただ、自然な流れへ戻っていく。
+          </p>
+        </div>
+      </section>
+
+      <section id="journal" class="journal section-shell">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="section-label">Journal</p>
+            <h2>水、音、暦。<br />日々の中で、静けさへ戻る小さな読みもの。</h2>
+          </div>
+          <div class="journal-grid">
+            <a class="journal-card reveal" href="journal.html#morning-water">
+              <div class="journal-image" aria-hidden="true"></div>
+              <div class="journal-body">
+                <p class="journal-date">2026.06.06</p>
+                <h3 class="journal-title">水を整える朝の習慣</h3>
+              </div>
+            </a>
+            <a class="journal-card reveal" href="journal.html#sound-afterglow">
+              <div class="journal-image sound" aria-hidden="true"></div>
+              <div class="journal-body">
+                <p class="journal-date">2026.06.06</p>
+                <h3 class="journal-title">音が心に残す余韻</h3>
+              </div>
+            </a>
+            <a class="journal-card reveal" href="journal.html#moon-cycles">
+              <div class="journal-image moon" aria-hidden="true"></div>
+              <div class="journal-body">
+                <p class="journal-date">2026.06.06</p>
+                <h3 class="journal-title">暦と巡り</h3>
+              </div>
+            </a>
+          </div>
+          <div class="journal-more reveal">
+            <a class="button secondary" href="journal.html">Journalを読む</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="line" class="line-cta section-shell">
+        <div class="section-inner narrow reveal">
+          <p class="section-label">Contact</p>
+          <h2>静かに、今のあなたから。</h2>
+          <a class="button primary line-button" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談する">
+            LINEで相談する
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <p class="brand-name">MIZUHA</p>
+        <p>安心の場・調和の世界</p>
+      </div>
+      <nav aria-label="フッターナビゲーション">
+        <a href="#stillness">Stillness</a>
+        <a href="#for-you">For You</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+      </nav>
+      <p class="copyright">&copy; MIZUHA</p>
+    </footer>
+
+    <a class="floating-line" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談する">
+      LINEで相談する
+    </a>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.16,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+    </script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header || header.querySelector('a[href*="#for-you"]')) return;
+    const menuLink = [...header.querySelectorAll("a")].find((link) => link.getAttribute("href")?.includes("#menu"));
+    if (!menuLink) return;
+    const forYou = document.createElement("a");
+    forYou.href = "mizuha.html#for-you";
+    forYou.textContent = "For You";
+    menuLink.before(forYou);
+  })();
+</script>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => el.textContent.trim() === "MIZUHA");
+    if (logo) logo.classList.add("mizuha-brand-mark");
+  })();
+</script>
+</body>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-brand-subtitle {
+    display: block !important;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const subtitleText = "安心の場・調和の世界";
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const logo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.childNodes[0]?.textContent || el.textContent).startsWith("MIZUHA"));
+    if (!logo) return;
+    header.querySelectorAll(".mizuha-brand-subtitle").forEach((el) => el.remove());
+    [...logo.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes(subtitleText)) {
+        node.textContent = node.textContent.replaceAll(subtitleText, "").trim();
+      }
+    });
+    const small = document.createElement("small");
+    small.className = "mizuha-brand-subtitle";
+    small.textContent = subtitleText;
+    logo.appendChild(small);
+  })();
+</script>
+<style>
+  header *::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .mizuha-logo-clean {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.22rem !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    line-height: 1.1 !important;
+  }
+
+  header .mizuha-logo-clean span {
+    display: block !important;
+  }
+
+  header .mizuha-logo-clean small {
+    display: block !important;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(79, 98, 104, 0.74);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+</style>
+<script>
+  (() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const compact = (value) => (value || "").replace(/\s+/g, "").trim();
+    const oldLogo = [...header.querySelectorAll("a, div, span")]
+      .find((el) => compact(el.textContent).startsWith("MIZUHA"));
+    if (!oldLogo) return;
+    const logo = document.createElement("a");
+    logo.href = "mizuha.html";
+    logo.className = `${oldLogo.className || ""} mizuha-logo-clean`.trim();
+    logo.innerHTML = `<span>MIZUHA</span><small>安心の場・調和の世界</small>`;
+    oldLogo.replaceWith(logo);
+  })();
+</script>
+<style>
+  #menu .menu-card,
+  #menu article,
+  #menu a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #menu .menu-card *,
+  #menu article *,
+  #menu a * {
+    max-width: 100%;
+  }
+
+  #menu h3,
+  #menu .menu-title,
+  #menu strong {
+    font-size: clamp(1.28rem, 2.1vw, 1.72rem) !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  #menu p {
+    font-size: clamp(0.92rem, 1.25vw, 1.02rem);
+    line-height: 1.8;
+  }
+</style>
+</html>

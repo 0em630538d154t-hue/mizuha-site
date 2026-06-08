@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUMI | MIZUHA</title>
+  <style>
+    :root {
+      --bg: #fdfcf8;
+      --paper: #f4f0e8;
+      --blue: #ddeff3;
+      --text: #4f6268;
+      --muted: rgba(79, 98, 104, 0.72);
+      --line: rgba(79, 98, 104, 0.15);
+      --gold: #c8b98a;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Yu Gothic", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--text); }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(221, 239, 243, 0.58), transparent 28rem),
+        radial-gradient(circle at 22% 8%, rgba(200, 185, 138, 0.16), transparent 24rem),
+        linear-gradient(180deg, #fdfcf8 0%, #f6f2ea 52%, #fdfcf8 100%);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.1rem clamp(1.2rem, 4vw, 3.2rem);
+      background: rgba(253, 252, 248, 0.86);
+      border-bottom: 1px solid rgba(79, 98, 104, 0.09);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+      font-family: var(--serif);
+      font-size: 1.34rem;
+      letter-spacing: 0.14em;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .brand small {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(0.8rem, 2vw, 1.4rem);
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: rgba(79, 98, 104, 0.82);
+    }
+
+    .line-link, .button {
+      border: 1px solid rgba(200, 185, 138, 0.72);
+      border-radius: 999px;
+      color: #5f664f;
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .line-link { padding: 0.45rem 1rem; }
+
+    section {
+      scroll-margin-top: 1.2rem;
+      padding: clamp(4.5rem, 9vw, 8rem) clamp(1.35rem, 5vw, 5rem);
+    }
+
+    .inner { width: min(1080px, 100%); margin: 0 auto; }
+
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding-top: clamp(5rem, 9vw, 8rem);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: clamp(1rem, 8vw, 8rem);
+      top: 16%;
+      width: clamp(13rem, 26vw, 23rem);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 32%, rgba(255,255,255,.92), rgba(221,239,243,.42) 42%, rgba(200,185,138,.16) 66%, transparent 70%);
+      opacity: 0.74;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(820px, 100%);
+    }
+
+    .eyebrow, .section-kicker {
+      margin: 0 0 1.1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--text);
+    }
+
+    h1 { margin: 0; font-size: clamp(4.2rem, 12vw, 9rem); line-height: 0.96; }
+    h2 { margin: 0; font-size: clamp(1.65rem, 3.4vw, 2.9rem); line-height: 1.18; }
+    #flow h2 {
+      white-space: normal;
+      font-size: clamp(1.65rem, 3.4vw, 2.9rem);
+      max-width: 8em;
+    }
+
+    #flow .flow-list {
+      padding-top: 0.35rem;
+    }
+    h3 { margin: 0 0 1rem; font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
+
+    .jp-title {
+      margin: 1.1rem 0 0;
+      font-size: clamp(1.55rem, 3.4vw, 2.5rem);
+    }
+
+    .service-type {
+      margin: 1.8rem 0 0;
+      font-size: clamp(1.05rem, 1.75vw, 1.28rem);
+      color: rgba(79, 98, 104, 0.86);
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      margin: 2.2rem 0 0;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+      line-height: 2;
+      color: rgba(79, 98, 104, 0.92);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(520px, 1.65fr) minmax(300px, 0.95fr);
+      gap: clamp(3rem, 6vw, 5.5rem);
+      align-items: start;
+    }
+
+    .body-copy {
+      margin-top: 1.8rem;
+      max-width: 680px;
+      font-size: clamp(1.05rem, 1.45vw, 1.18rem);
+      line-height: 2.05;
+      white-space: pre-line;
+    }
+
+    .side-card {
+      margin-top: 1.9rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .side-card ul {
+      display: grid;
+      gap: 0.72rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .side-card li {
+      position: relative;
+      padding-left: 1rem;
+      line-height: 1.8;
+    }
+
+    .side-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.78em;
+      width: 0.34rem;
+      height: 0.34rem;
+      border-radius: 999px;
+      background: rgba(200,185,138,.78);
+    }
+
+    .flow-list {
+      display: grid;
+      gap: 1rem;
+      max-width: 820px;
+    }
+
+    #faq .section-grid {
+      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.8fr);
+      gap: clamp(2.4rem, 5vw, 4.5rem);
+    }
+
+    #faq .flow-list {
+      max-width: 820px;
+    }
+
+    #faq h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.45rem);
+      white-space: nowrap;
+    }
+
+    #flow .section-grid {
+      grid-template-columns: minmax(300px, 0.62fr) minmax(0, 1.9fr);
+      gap: clamp(2.4rem, 5vw, 4.5rem);
+    }
+
+    #flow .flow-list {
+      max-width: 900px;
+    }
+
+    .flow-item {
+      border-top: 1px solid var(--line);
+      padding-top: 1.15rem;
+    }
+
+    .flow-num {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .flow-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .flow-item p { margin: 0; line-height: 1.85; color: rgba(79,98,104,.86); }
+
+    .faq-list {
+      margin: 0.35rem 0 0.65rem;
+      padding-left: 1.2rem;
+    }
+
+    .faq-list li {
+      line-height: 1.9;
+    }
+
+    .price-card {
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+      max-width: 660px;
+    }
+
+    #price .section-grid {
+      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.8fr);
+      gap: clamp(2.4rem, 5vw, 4.5rem);
+    }
+
+    #price .price-card {
+      margin-top: 0.35rem;
+    }
+
+    #price h2 {
+      font-size: clamp(1.52rem, 3.05vw, 2.65rem);
+    }
+
+    #price .price-menu {
+      line-height: 1.9;
+    }
+
+    #price .price-menu .menu-gap {
+      display: block;
+      height: 0.75rem;
+    }
+
+    #price .price-divider {
+      height: 1px;
+      width: min(320px, 72%);
+      margin: 1.55rem 0;
+      background: rgba(79, 98, 104, 0.16);
+    }
+
+    #price .price-submenu {
+      margin: 0 0 1.1rem;
+      line-height: 1.9;
+      font-family: var(--sans);
+      font-size: 1.08rem;
+      font-weight: 500;
+      color: rgba(79, 98, 104, 0.94);
+    }
+
+    .reserve {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(221,239,243,.35), rgba(253,252,248,.92));
+    }
+
+    .reserve .section-kicker {
+      margin-bottom: 2.3rem;
+    }
+
+    .reserve h2 {
+      margin-bottom: 2.2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      min-height: 54px;
+      padding: 0 1.3rem;
+      letter-spacing: 0.08em;
+    }
+
+    footer {
+      padding: 2.5rem clamp(1.35rem, 5vw, 5rem);
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 820px) {
+      header { align-items: flex-start; flex-direction: column; }
+      nav { justify-content: flex-start; }
+      .section-grid { grid-template-columns: 1fr; }
+      section { scroll-margin-top: 2.2rem; }
+      .button, .line-link { width: 100%; }
+    }
+  </style>
+  <style>
+    .nowrap { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="mizuha.html" aria-label="MIZUHAトップへ">
+      <span>MIZUHA</span>
+      <small>SUMI</small>
+    </a>
+    <nav aria-label="SUMIページ内ナビゲーション">
+      <a href="#service">Service</a>
+      <a href="#for-you">For You</a>
+      <a href="#flow">Flow</a>
+      <a href="#price">Price</a>
+      <a href="#faq">FAQ</a>
+      <a class="line-link" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINE</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">MIZUHA MENU</p>
+        <h1>SUMI</h1>
+        <p class="jp-title">澄</p>
+        <p class="service-type">Access Bars・Facelift・Body Process・<br>潜在意識セッション</p>
+        <p class="lead">思考や感情の濁りをほどき、<br>本来の軽やかさへ還る時間。</p>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">Service</p>
+          <h2>サービス説明</h2>
+          <p class="body-copy">SUMIは、頭や身体にたまった緊張、思考、感情をやさしくほどくためのセッションです。
+
+水は本来、自由に流れ、澄んでいます。
+
+けれど、不安や思い込み、抱え込んだ感情は、
+内なる水を濁らせたり、滞らせたりすることがあります。
+
+SUMIでは、不要な力みや制限を手放しながら、
+内側の水が静かに澄んでいく余白を育みます。
+
+本来の軽やかさや静けさを思い出し、
+自分らしい流れへ還っていくための時間です。</p>
+        </div>
+        <aside id="for-you" class="side-card">
+          <h3>こんな方へ</h3>
+          <ul>
+            <li>頭の中がいつも忙しい</li>
+            <li>気持ちが晴れない日が続いている</li>
+            <li>同じ悩みや思考を繰り返してしまう</li>
+            <li>手放したい感情や思い込みがある</li>
+            <li>人の感情や空気に影響されやすい</li>
+            <li>心の水面を静かに澄ませたい</li>
+            <li>自分本来の軽やかさを取り戻したい</li>
+            <li>本当の自分の声を聴きたい</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">Flow</p>
+          <h2>セッション<br>の流れ</h2>
+        </div>
+        <div class="flow-list">
+          <div class="flow-item">
+            <span class="flow-num">01</span>
+            <strong>LINEよりご予約</strong>
+            <p>ご希望日時やお悩み、ご興味のあるメニューをお伺いします。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">02</span>
+            <strong>今の状態を確認する</strong>
+            <p>日常で感じていることや、気になっているテーマをお聞きします。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">03</span>
+            <strong>メニューを選ぶ</strong>
+            <p>Access Bars・Facelift・Body Process・潜在意識セッションなど、<br>今の状態に合わせて内容を決めていきます。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">04</span>
+            <strong>静かに受け取る</strong>
+            <p>横になったり、リラックスした状態で施術やセッションを受けていただきます。</p>
+            <p>思考や感情を手放しながら、内側の流れをやさしく整えていきます。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">05</span>
+            <strong>澄みゆく変化を感じる</strong>
+            <p>セッション後に感じたことや気づきを静かに受け取ります。</p>
+            <p>必要に応じて、日常で取り入れられるヒントもお伝えします。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-num">06</span>
+            <strong>澄んだ感覚を持ち帰る</strong>
+            <p>本来の軽やかさや静けさを思い出し、澄んだ自分へ還る感覚を持ち帰ります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="price">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">Price</p>
+          <h2>料金のご案内</h2>
+        </div>
+        <div class="price-card">
+          <h3>澄みゆくセッション</h3>
+          <p>内なる水を澄ませるように、<br>思考や感情、不要な思い込みをやさしくほどく時間です。</p>
+          <p class="price-menu">Access Bars<br>Access Facelift<br>Body Process</p>
+          <p>60分　11,000円<br>90分　16,500円</p>
+          <p>※対面のみ</p>
+          <div class="price-divider"></div>
+          <p class="price-submenu">潜在意識セッション</p>
+          <p>60分　11,000円</p>
+          <p>※オンライン・対面対応</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reserve">
+      <div class="inner">
+        <p class="section-kicker">Reserve</p>
+        <h2>静かに、今のあなたから。</h2>
+        <a class="button" href="https://lin.ee/ngiKEYW" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="inner section-grid">
+        <div>
+          <p class="section-kicker">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="flow-list">
+          <div class="flow-item">
+            <strong>Q. Access Barsと潜在意識セッションは何が違いますか？</strong>
+            <p>A. Access Barsは頭部へのやさしいタッチを通して、<br>思考や感情を手放していく施術です。</p>
+            <p>潜在意識セッションは、対話を通して思い込みや制限を見つめ、<br>新しい選択をしやすくするためのサポートです。</p>
+            <p>今の状態に合わせてご提案もできます。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. どんな変化がありますか？</strong>
+            <p>A. 感じ方には個人差がありますが、</p>
+            <ul class="faq-list">
+              <li>頭の中が静かになる</li>
+              <li>考えすぎがやわらぐ</li>
+              <li>身体が軽く感じる</li>
+              <li>深く眠れる</li>
+              <li>気持ちが整理される</li>
+            </ul>
+            <p>などのお声をいただいています。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. 潜在意識を書き換えるのですか？</strong>
+            <p>A. SUMIの潜在意識セッションでは、<br>繰り返している思考パターンや思い込み、制限となっている信念を見つめ、<br>本来望む状態へと書き換えていきます。</p>
+            <p>無理に何かを植え付けるのではなく、<br>ご自身が不要と感じるパターンを手放し、<br>新しい選択ができる状態を育てていくプロセスです。</p>
+            <p>内なる水を濁らせていた原因に気づき、<br>より澄んだ流れへ戻っていくことを大切にしています。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. セッション中に眠ってしまっても大丈夫ですか？</strong>
+            <p>A. はい。大丈夫です。</p>
+            <p>深くリラックスすると、眠ってしまう方も少なくありません。</p>
+            <p>意識が休まり、内なる水が静かに澄んでいく時間も、<br>SUMIの大切なプロセスのひとつです。</p>
+            <p>眠っている間も必要なプロセスは続いていますので、<br>安心してお過ごしください。</p>
+          </div>
+          <div class="flow-item">
+            <strong>Q. どのメニューを選べばよいかわかりません</strong>
+            <p>A. 今のお悩みや状態をお伺いしながら、ご提案いたします。</p>
+            <p>「なんとなく気になる」からでも大丈夫です。</p>
+            <p>まずはお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">MIZUHA / SUMI</div>
+  </footer>
+</body>
+</html>
