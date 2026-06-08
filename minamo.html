@@ -778,4 +778,58 @@ header a:first-of-type::after,
     }
   }
 </style>
+<style>
+  @media (max-width: 900px) {
+    html,
+    body {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    #price {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+      padding-left: clamp(1.15rem, 5vw, 1.6rem) !important;
+      padding-right: clamp(1.15rem, 5vw, 1.6rem) !important;
+    }
+
+    #price .inner,
+    #price .section-grid,
+    #price .price-grid,
+    #price .pricing-grid,
+    #price .price-list,
+    #price .price-card,
+    #price article,
+    #price div {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    #price .section-grid,
+    #price .price-grid,
+    #price .pricing-grid,
+    #price .price-list {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 1.35rem !important;
+    }
+
+    #price h2,
+    #price h3,
+    #price p,
+    #price li,
+    #price span,
+    #price small {
+      max-width: 100% !important;
+      min-width: 0 !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+      white-space: normal !important;
+    }
+  }
+</style>
 </html>
