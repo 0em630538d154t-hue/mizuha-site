@@ -832,4 +832,76 @@ header a:first-of-type::after,
     }
   }
 </style>
+<style>
+  @media (max-width: 768px) {
+    html,
+    body,
+    main,
+    section {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    section {
+      padding-left: 22px !important;
+      padding-right: 22px !important;
+      box-sizing: border-box !important;
+    }
+
+    .inner,
+    .section-grid,
+    .service-grid,
+    .service-layout,
+    .content-grid,
+    .detail-grid,
+    .price-grid,
+    .pricing-grid,
+    .flow-grid,
+    .flow-list,
+    .faq-grid,
+    #service .section-grid,
+    #for-you .section-grid,
+    #flow .section-grid,
+    #price .section-grid,
+    #faq .section-grid {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      gap: 1.6rem !important;
+      box-sizing: border-box !important;
+    }
+
+    .body-copy,
+    .flow-list,
+    .price-card,
+    .for-you-card,
+    .side-card,
+    article,
+    .card,
+    #flow > *,
+    #price > *,
+    #faq > * {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    strong,
+    span,
+    small {
+      max-width: 100% !important;
+      overflow-wrap: break-word !important;
+      word-break: normal !important;
+    }
+  }
+</style>
 </html>
