@@ -737,4 +737,45 @@ header a:first-of-type::after,
     setTimeout(setupStableServiceNav, 700);
   })();
 </script>
+<style>
+  @media (max-width: 820px) {
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    section,
+    .inner,
+    main {
+      max-width: 100%;
+    }
+
+    #price,
+    #price * {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    #price .section-grid,
+    #price .price-grid,
+    #price .pricing-grid,
+    #price .content-grid,
+    #price .service-grid,
+    #price .detail-grid {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 1.6rem !important;
+    }
+
+    #price .price-card,
+    #price article,
+    #price .card {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+</style>
 </html>

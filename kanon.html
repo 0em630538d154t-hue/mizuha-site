@@ -635,4 +635,49 @@
     <div class="inner">MIZUHA / KANON</div>
   </footer>
 </body>
+<style>
+  @media (max-width: 820px) {
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    section,
+    .inner,
+    main {
+      max-width: 100%;
+    }
+
+    .section-grid,
+    .service-layout,
+    .service-two-column,
+    #flow .section-grid,
+    #price .section-grid,
+    #faq .section-grid {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 1.8rem !important;
+    }
+
+    #flow .flow-list,
+    #faq .flow-list,
+    #price .price-card,
+    .body-copy,
+    .for-you-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    #flow p,
+    #faq p,
+    #flow strong,
+    #faq strong {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+  }
+</style>
 </html>
