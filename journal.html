@@ -154,7 +154,7 @@
     }
   </style>
 </head>
-<body>
+<body id="journal-page-top">
   <header>
     <a class="brand" href="mizuha.html">
       <span>MIZUHA</span>
@@ -241,6 +241,29 @@
     fixJournalTopLink();
     window.addEventListener("load", fixJournalTopLink);
     setTimeout(fixJournalTopLink, 300);
+  })();
+</script>
+<script>
+  (() => {
+    const goJournalTop = () => {
+      if (window.location.search.includes("top=1") || window.location.hash === "#journal-top") {
+        window.scrollTo({ top: 0, behavior: "auto" });
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 80);
+      }
+
+      document.querySelectorAll("header a").forEach((link) => {
+        if ((link.textContent || "").trim() === "Journal") {
+          link.href = "journal.html?top=1";
+          link.onclick = (event) => {
+            event.preventDefault();
+            window.location.href = "journal.html?top=1";
+          };
+        }
+      });
+    };
+
+    goJournalTop();
+    window.addEventListener("load", goJournalTop);
   })();
 </script>
 </html>
