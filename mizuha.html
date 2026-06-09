@@ -1284,4 +1284,21 @@
     setTimeout(fixJournalTopLink, 300);
   })();
 </script>
+<script>
+  (() => {
+    const fixJournalButton = () => {
+      document.querySelectorAll("header a").forEach((link) => {
+        if ((link.textContent || "").trim() === "Journal") {
+          link.href = "journal.html?top=1";
+          link.onclick = (event) => {
+            event.preventDefault();
+            window.location.href = "journal.html?top=1";
+          };
+        }
+      });
+    };
+    fixJournalButton();
+    window.addEventListener("load", fixJournalButton);
+  })();
+</script>
 </html>

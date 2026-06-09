@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Journal | MIZUHA</title>
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.addEventListener("pageshow", () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
   <style>
     :root {
       --bg: #fdfcf8;
@@ -218,6 +226,13 @@
     if (link.textContent.trim() === 'Journal') {
       link.href = 'journal.html#journal-top';
     }
+  });
+</script>
+<script>
+  window.scrollTo(0, 0);
+  window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 120);
   });
 </script>
 </body>
