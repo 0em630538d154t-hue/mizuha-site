@@ -1235,4 +1235,28 @@
     line-height: 1.8;
   }
 </style>
+<script>
+  (() => {
+    const links = [
+      ["水を整える朝の習慣", "journal/water-morning.html"],
+      ["水を飲むことから始める朝", "journal/water-morning.html"],
+      ["音が心に残す余韻", "journal/sound-afterglow.html"],
+      ["シンギングボウルの音に、ただ委ねてみる", "journal/sound-afterglow.html"],
+      ["暦と巡り", "journal/cycles-calendar.html"],
+      ["季節の変わり目に、ふと思うこと", "journal/cycles-calendar.html"]
+    ];
+    links.forEach(([title, href]) => {
+      [...document.querySelectorAll("a, article, .card, div")]
+        .filter((el) => (el.textContent || "").includes(title))
+        .forEach((el) => {
+          const anchor = el.closest("a") || el.querySelector("a");
+          if (anchor) anchor.href = href;
+          else if (el.tagName.toLowerCase() === "article" || el.className) {
+            el.style.cursor = "pointer";
+            el.addEventListener("click", () => { window.location.href = href; });
+          }
+        });
+    });
+  })();
+</script>
 </html>

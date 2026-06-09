@@ -652,4 +652,34 @@
     setTimeout(normalizeJournalLogo, 500);
   })();
 </script>
+<script>
+  (() => {
+    const links = [
+      ["水を整える朝の習慣", "journal/water-morning.html"],
+      ["水を飲むことから始める朝", "journal/water-morning.html"],
+      ["音が心に残す余韻", "journal/sound-afterglow.html"],
+      ["シンギングボウルの音に、ただ委ねてみる", "journal/sound-afterglow.html"],
+      ["暦と巡り", "journal/cycles-calendar.html"],
+      ["季節の変わり目に、ふと思うこと", "journal/cycles-calendar.html"],
+      ["食を整えることは水を整えること", "journal/food-water.html"],
+      ["食べることは、自分を大切にすること", "journal/food-water.html"],
+      ["頑張りすぎた日に思い出したいこと", "journal/too-much-effort.html"],
+      ["頑張りすぎているあなたへ", "journal/too-much-effort.html"],
+      ["言葉が内なる水に触れるとき", "journal/quiet-words.html"],
+      ["ただ、気づくだけでいい", "journal/quiet-words.html"]
+    ];
+    links.forEach(([title, href]) => {
+      [...document.querySelectorAll("a, article, .card, div")]
+        .filter((el) => (el.textContent || "").includes(title))
+        .forEach((el) => {
+          const anchor = el.closest("a") || el.querySelector("a");
+          if (anchor) anchor.href = href;
+          else if (el.tagName.toLowerCase() === "article" || el.className) {
+            el.style.cursor = "pointer";
+            el.addEventListener("click", () => { window.location.href = href; });
+          }
+        });
+    });
+  })();
+</script>
 </html>
