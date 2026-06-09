@@ -1122,6 +1122,13 @@
     if (logo) logo.classList.add("mizuha-brand-mark");
   })();
 </script>
+<script>
+  document.querySelectorAll('header a').forEach((link) => {
+    if (link.textContent.trim() === 'Journal') {
+      link.href = 'journal.html#journal-top';
+    }
+  });
+</script>
 </body>
 <style>
   header *::after {
