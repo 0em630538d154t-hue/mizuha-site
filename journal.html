@@ -170,7 +170,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="journal-top">
     <p class="eyebrow">Journal</p>
     <h1>Journal</h1>
     <p class="lead">日々の中で、内なる水が静かに澄んでいくような小さな言葉を綴ります。</p>
@@ -213,5 +213,12 @@
       </a>
     </section>
   </main>
+<script>
+  document.querySelectorAll('header a').forEach((link) => {
+    if (link.textContent.trim() === 'Journal') {
+      link.href = 'journal.html#journal-top';
+    }
+  });
+</script>
 </body>
 </html>
