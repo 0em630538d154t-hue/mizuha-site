@@ -1266,4 +1266,22 @@
     });
   })();
 </script>
+<script>
+  (() => {
+    const fixJournalTopLink = () => {
+      [...document.querySelectorAll("header a")]
+        .filter((link) => (link.textContent || "").trim() === "Journal")
+        .forEach((link) => {
+          link.href = "journal.html#journal-top";
+          link.onclick = (event) => {
+            event.preventDefault();
+            window.location.href = "journal.html#journal-top";
+          };
+        });
+    };
+    fixJournalTopLink();
+    window.addEventListener("load", fixJournalTopLink);
+    setTimeout(fixJournalTopLink, 300);
+  })();
+</script>
 </html>

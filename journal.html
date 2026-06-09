@@ -221,4 +221,26 @@
   });
 </script>
 </body>
+<script>
+  (() => {
+    const fixJournalTopLink = () => {
+      const links = [...document.querySelectorAll("header a")]
+        .filter((link) => (link.textContent || "").trim() === "Journal");
+      links.forEach((link) => {
+        link.href = "journal.html#journal-top";
+        link.onclick = (event) => {
+          event.preventDefault();
+          window.location.href = "journal.html#journal-top";
+          window.setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 40);
+        };
+      });
+      if (window.location.hash === "#journal-top") {
+        window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 40);
+      }
+    };
+    fixJournalTopLink();
+    window.addEventListener("load", fixJournalTopLink);
+    setTimeout(fixJournalTopLink, 300);
+  })();
+</script>
 </html>
